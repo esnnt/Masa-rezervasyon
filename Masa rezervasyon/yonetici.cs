@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Masa_rezervasyon
 {
-    public partial class MusteriRez : Form
+    public partial class yonetici : Form
     {
-        public MusteriRez()
+        public yonetici()
         {
             InitializeComponent();
-        }
-
-        private void MusteriRez_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
