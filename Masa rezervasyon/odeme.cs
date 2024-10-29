@@ -12,9 +12,14 @@ namespace Masa_rezervasyon
 {
     public partial class odeme : Form
     {
-        public odeme()
+        public odeme(string masaNumarasi)
         {
-            InitializeComponent();
+            InitializeComponent();     
+        }
+
+        private void odeme_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

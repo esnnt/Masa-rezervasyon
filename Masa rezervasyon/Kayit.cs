@@ -25,13 +25,18 @@ namespace Masa_rezervasyon
 
         private void btn_kayit_Click(object sender, EventArgs e)
         {
- 
+        
         }
 
         private void btn_geri_Click(object sender, EventArgs e)
         {
             //bulunduğu sayfayı kapatarak bir önceki sayfaya dönmesini sağlıyor.
             this.Close();
+        }
+
+        private void Kayit_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

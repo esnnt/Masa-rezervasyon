@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btn_geri = new Button();
             btn_kayit = new Button();
             btn_goz = new Button();
             txt_sifre = new TextBox();
@@ -37,7 +38,6 @@
             lbl_sifre = new Label();
             lbl_mail = new Label();
             lbl_kullaniciadi = new Label();
-            btn_geri = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,6 +59,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Kayıt Ol";
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // btn_geri
+            // 
+            btn_geri.Location = new Point(0, 391);
+            btn_geri.Name = "btn_geri";
+            btn_geri.Size = new Size(90, 28);
+            btn_geri.TabIndex = 8;
+            btn_geri.Text = "Geri";
+            btn_geri.UseVisualStyleBackColor = true;
+            btn_geri.Click += btn_geri_Click;
             // 
             // btn_kayit
             // 
@@ -126,16 +136,6 @@
             lbl_kullaniciadi.TabIndex = 0;
             lbl_kullaniciadi.Text = "Kullanıcı Adı:";
             // 
-            // btn_geri
-            // 
-            btn_geri.Location = new Point(0, 391);
-            btn_geri.Name = "btn_geri";
-            btn_geri.Size = new Size(90, 28);
-            btn_geri.TabIndex = 8;
-            btn_geri.Text = "Geri";
-            btn_geri.UseVisualStyleBackColor = true;
-            btn_geri.Click += btn_geri_Click;
-            // 
             // Kayit
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
@@ -144,6 +144,7 @@
             Controls.Add(groupBox1);
             Name = "Kayit";
             Text = "Kayit";
+            Load += Kayit_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

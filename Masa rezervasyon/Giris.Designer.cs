@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btn_geri = new Button();
             linkLabel1 = new LinkLabel();
             label2 = new Label();
             btn_giris = new Button();
@@ -40,7 +41,6 @@
             lbl_mail = new Label();
             lbl_kullaniciadi = new Label();
             label1 = new Label();
-            btn_geri = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,6 +64,16 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Giriş Yap";
+            // 
+            // btn_geri
+            // 
+            btn_geri.Location = new Point(0, 391);
+            btn_geri.Name = "btn_geri";
+            btn_geri.Size = new Size(90, 28);
+            btn_geri.TabIndex = 11;
+            btn_geri.Text = "Geri";
+            btn_geri.UseVisualStyleBackColor = true;
+            btn_geri.Click += btn_geri_Click;
             // 
             // linkLabel1
             // 
@@ -161,16 +171,6 @@
             label1.TabIndex = 0;
             label1.Text = "HOŞ GELDİNİZ";
             // 
-            // btn_geri
-            // 
-            btn_geri.Location = new Point(0, 391);
-            btn_geri.Name = "btn_geri";
-            btn_geri.Size = new Size(90, 28);
-            btn_geri.TabIndex = 11;
-            btn_geri.Text = "Geri";
-            btn_geri.UseVisualStyleBackColor = true;
-            btn_geri.Click += btn_geri_Click;
-            // 
             // Giris
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
@@ -179,6 +179,7 @@
             Controls.Add(groupBox1);
             Name = "Giris";
             Text = "Giris";
+            Load += Giris_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

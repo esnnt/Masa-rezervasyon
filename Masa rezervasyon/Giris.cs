@@ -27,12 +27,19 @@ namespace Masa_rezervasyon
 
         private void btn_giris_Click(object sender, EventArgs e)
         {
-         
+            MusteriRez mstr = new MusteriRez();
+            mstr.Show();
+            this.Hide();
         }
 
         private void btn_geri_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Giris_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
