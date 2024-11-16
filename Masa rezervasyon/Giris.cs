@@ -27,9 +27,7 @@ namespace Masa_rezervasyon
 
         private void btn_giris_Click(object sender, EventArgs e)
         {
-            MusteriRez mstr = new MusteriRez();
-            mstr.Show();
-            this.Hide();
+          
         }
 
         private void btn_geri_Click(object sender, EventArgs e)
@@ -40,6 +38,12 @@ namespace Masa_rezervasyon
         private void Giris_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            yonetici yntc = new yonetici();
+            yntc.Show();
         }
     }
 }

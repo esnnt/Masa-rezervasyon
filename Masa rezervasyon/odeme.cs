@@ -14,12 +14,18 @@ namespace Masa_rezervasyon
     {
         public odeme(string masaNumarasi)
         {
-            InitializeComponent();     
+            InitializeComponent();
         }
 
         private void odeme_Load(object sender, EventArgs e)
         {
+           
+        }
 
+        private void btn_listele_Click(object sender, EventArgs e)
+        {
+           yonetici yonetici = new yonetici();
+            yonetici.MenuItemleriniGetir(yiyecek_list,icecek_list);
         }
     }
 }

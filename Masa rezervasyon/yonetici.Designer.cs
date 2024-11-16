@@ -32,13 +32,16 @@
             textBox1 = new TextBox();
             label1 = new Label();
             masa_tasi = new Button();
-            onay_btn = new Button();
-            listView_yiyecek = new ListView();
-            listView_icecek = new ListView();
+            btn_onay = new Button();
+            yiyecek_list = new ListView();
             label2 = new Label();
-            label3 = new Label();
-            yiyecek_txtbox = new TextBox();
-            icecek_txtbox = new TextBox();
+            txt_menu = new TextBox();
+            icecek = new RadioButton();
+            yiyecek = new RadioButton();
+            btn_sil = new Button();
+            icecek_list = new ListView();
+            lbl_icecek = new Label();
+            lbl_yiyecek = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -76,99 +79,144 @@
             masa_tasi.Text = "Masa Taşıma";
             masa_tasi.UseVisualStyleBackColor = true;
             // 
-            // onay_btn
+            // btn_onay
             // 
-            onay_btn.Location = new Point(641, 336);
-            onay_btn.Name = "onay_btn";
-            onay_btn.Size = new Size(242, 28);
-            onay_btn.TabIndex = 4;
-            onay_btn.Text = "Onay";
-            onay_btn.UseVisualStyleBackColor = true;
+            btn_onay.Location = new Point(806, 42);
+            btn_onay.Name = "btn_onay";
+            btn_onay.Size = new Size(77, 46);
+            btn_onay.TabIndex = 4;
+            btn_onay.Text = "Onay";
+            btn_onay.UseVisualStyleBackColor = true;
+            btn_onay.Click += btn_onay_Click;
             // 
-            // listView_yiyecek
+            // yiyecek_list
             // 
-            listView_yiyecek.Location = new Point(641, 40);
-            listView_yiyecek.Name = "listView_yiyecek";
-            listView_yiyecek.Size = new Size(242, 119);
-            listView_yiyecek.TabIndex = 5;
-            listView_yiyecek.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView_icecek
-            // 
-            listView_icecek.Location = new Point(641, 200);
-            listView_icecek.Name = "listView_icecek";
-            listView_icecek.Size = new Size(242, 127);
-            listView_icecek.TabIndex = 6;
-            listView_icecek.UseCompatibleStateImageBehavior = false;
+            yiyecek_list.Location = new Point(641, 114);
+            yiyecek_list.Name = "yiyecek_list";
+            yiyecek_list.Size = new Size(117, 212);
+            yiyecek_list.TabIndex = 5;
+            yiyecek_list.UseCompatibleStateImageBehavior = false;
+            yiyecek_list.View = View.SmallIcon;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(641, 13);
+            label2.Location = new Point(641, 16);
             label2.Name = "label2";
-            label2.Size = new Size(92, 20);
+            label2.Size = new Size(95, 20);
             label2.TabIndex = 7;
-            label2.Text = "Yiyecek ekle:";
+            label2.Text = "Menüye ekle:";
             // 
-            // label3
+            // txt_menu
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(641, 176);
-            label3.Name = "label3";
-            label3.Size = new Size(84, 20);
-            label3.TabIndex = 8;
-            label3.Text = "İçecek ekle:";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            txt_menu.Location = new Point(735, 10);
+            txt_menu.Name = "txt_menu";
+            txt_menu.Size = new Size(148, 26);
+            txt_menu.TabIndex = 9;
             // 
-            // yiyecek_txtbox
+            // icecek
             // 
-            yiyecek_txtbox.Location = new Point(735, 10);
-            yiyecek_txtbox.Name = "yiyecek_txtbox";
-            yiyecek_txtbox.Size = new Size(148, 26);
-            yiyecek_txtbox.TabIndex = 9;
+            icecek.AutoSize = true;
+            icecek.Location = new Point(641, 69);
+            icecek.Name = "icecek";
+            icecek.Size = new Size(68, 24);
+            icecek.TabIndex = 10;
+            icecek.TabStop = true;
+            icecek.Text = "İçecek";
+            icecek.UseVisualStyleBackColor = true;
             // 
-            // icecek_txtbox
+            // yiyecek
             // 
-            icecek_txtbox.Location = new Point(735, 170);
-            icecek_txtbox.Name = "icecek_txtbox";
-            icecek_txtbox.Size = new Size(148, 26);
-            icecek_txtbox.TabIndex = 10;
+            yiyecek.AutoSize = true;
+            yiyecek.Location = new Point(641, 42);
+            yiyecek.Name = "yiyecek";
+            yiyecek.Size = new Size(76, 24);
+            yiyecek.TabIndex = 11;
+            yiyecek.TabStop = true;
+            yiyecek.Text = "Yiyecek";
+            yiyecek.UseVisualStyleBackColor = true;
+            // 
+            // btn_sil
+            // 
+            btn_sil.Location = new Point(719, 42);
+            btn_sil.Name = "btn_sil";
+            btn_sil.Size = new Size(81, 46);
+            btn_sil.TabIndex = 12;
+            btn_sil.Text = "sil";
+            btn_sil.UseVisualStyleBackColor = true;
+            btn_sil.Click += btn_sil_Click;
+            // 
+            // icecek_list
+            // 
+            icecek_list.Location = new Point(764, 114);
+            icecek_list.Name = "icecek_list";
+            icecek_list.Size = new Size(119, 212);
+            icecek_list.TabIndex = 13;
+            icecek_list.UseCompatibleStateImageBehavior = false;
+            icecek_list.View = View.SmallIcon;
+            // 
+            // lbl_icecek
+            // 
+            lbl_icecek.AutoSize = true;
+            lbl_icecek.Location = new Point(764, 91);
+            lbl_icecek.Name = "lbl_icecek";
+            lbl_icecek.Size = new Size(67, 20);
+            lbl_icecek.TabIndex = 14;
+            lbl_icecek.Text = "İçecekler";
+            // 
+            // lbl_yiyecek
+            // 
+            lbl_yiyecek.AutoSize = true;
+            lbl_yiyecek.Location = new Point(642, 91);
+            lbl_yiyecek.Name = "lbl_yiyecek";
+            lbl_yiyecek.Size = new Size(75, 20);
+            lbl_yiyecek.TabIndex = 14;
+            lbl_yiyecek.Text = "Yiyecekler";
             // 
             // yonetici
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(895, 479);
-            Controls.Add(icecek_txtbox);
-            Controls.Add(yiyecek_txtbox);
-            Controls.Add(label3);
+            Controls.Add(lbl_yiyecek);
+            Controls.Add(lbl_icecek);
+            Controls.Add(icecek_list);
+            Controls.Add(btn_sil);
+            Controls.Add(yiyecek);
+            Controls.Add(icecek);
+            Controls.Add(txt_menu);
             Controls.Add(label2);
-            Controls.Add(listView_icecek);
-            Controls.Add(listView_yiyecek);
-            Controls.Add(onay_btn);
+            Controls.Add(yiyecek_list);
+            Controls.Add(btn_onay);
             Controls.Add(masa_tasi);
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
             Name = "yonetici";
             Text = "yonetici";
+            Load += yonetici_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
+        private System.Windows.Forms.ListView yiyecek_list;
+        
 
         private DataGridView dataGridView1;
         private TextBox textBox1;
         private Label label1;
         private Button masa_tasi;
-        private Button onay_btn;
-        private ListView listView_yiyecek;
-        private ListView listView_icecek;
+        private Button btn_onay;
         private Label label2;
-        private Label label3;
-        private TextBox yiyecek_txtbox;
-        private TextBox icecek_txtbox;
+        private TextBox txt_menu;
+        private RadioButton yiyecek;
+        private Button btn_sil;
+        private RadioButton icecek;
+        private ListView icecek_list;
+        private Label lbl_icecek;
+        private Label lbl_yiyecek;
+        // private ListView listView1;
     }
 }
