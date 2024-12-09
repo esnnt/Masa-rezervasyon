@@ -47,12 +47,14 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 49;
             dataGridView1.Size = new Size(623, 314);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // textBox1
             // 

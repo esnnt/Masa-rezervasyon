@@ -26,33 +26,33 @@ namespace Masa_rezervasyon
         private void btn_kayit_Click(object sender, EventArgs e)
         {
 
-            MySqlConnection baglan = new MySqlConnection(
-            "Server='localhost';" +
-            "Database='masarezervasyon';" +
-            "Uid='root';" +
-            "Pwd='esin;");
-
-            string kullaniciadi = txt_kullaniciadi.Text;
-                string sifre = txt_sifre.Text;
-                string mail = txt_mail.Text;
-                string rol = "user";  // Varsayılan olarak 'user' rolü atıyoruz.
-
-                // Eğer kullanıcının adı 'adminUser' ise rolü 'admin' yapma
-                // Ancak veritabanında bu kullanıcı zaten var. Bu durumda sadece normal kullanıcı kaydedilecek.
-                if (kullaniciadi != "esin")  // 'esin' dışında her kullanıcı 'user' olacak
+            string connectionString = "Server=localhost;Database=masarezervasyon;Uid=root;Pwd='esin1021.Tkn';";
+            using (MySqlConnection baglan = new MySqlConnection(connectionString))
+            {
+                try
                 {
-                    rol = "user";  // Varsayılan olarak 'user' rolü
-                }
+                  //  baglan.Open();
+                    string kullaniciadi = txt_kullaniciadi.Text;
+                    string sifre = txt_sifre.Text;
+                    string mail = txt_mail.Text;
+                    string rol = "user";  // Varsayılan olarak 'user' rolü atıyoruz.
 
-                // Boş alan kontrolü
-                if (string.IsNullOrEmpty(kullaniciadi) || string.IsNullOrEmpty(sifre) || string.IsNullOrEmpty(mail))
-                {
-                    MessageBox.Show("Lütfen tüm alanları doldurun.");
-                    return;
-                }
+                    // Eğer kullanıcının adı 'adminUser' ise rolü 'admin' yapma
+                    // Ancak veritabanında bu kullanıcı zaten var. Bu durumda sadece normal kullanıcı kaydedilecek.
+                    if (kullaniciadi != "esin")  // 'esin' dışında her kullanıcı 'user' olacak
+                    {
+                        rol = "user";  // Varsayılan olarak 'user' rolü
+                    }
 
-                // Veritabanı bağlantısı
-              
+                    // Boş alan kontrolü
+                    if (string.IsNullOrEmpty(kullaniciadi) || string.IsNullOrEmpty(sifre) || string.IsNullOrEmpty(mail))
+                    {
+                        MessageBox.Show("Lütfen tüm alanları doldurun.");
+                        return;
+                    }
+
+                    // Veritabanı bağlantısı
+
                     baglan.Open();
 
                     // Kullanıcı bilgilerini ve rolünü veritabanına ekle
@@ -69,16 +69,21 @@ namespace Masa_rezervasyon
                     if (result > 0)
                     {
                         MessageBox.Show("Kayıt başarıyla tamamlandı.");
-                       txt_kullaniciadi.Clear();
-                       txt_sifre.Clear();
-                       txt_mail.Clear();
+                        txt_kullaniciadi.Clear();
+                        txt_sifre.Clear();
+                        txt_mail.Clear();
                     }
 
                     else
                     {
                         MessageBox.Show("Kayıt işlemi başarısız.");
                     }
-
+                    baglan.Close();
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
 
 

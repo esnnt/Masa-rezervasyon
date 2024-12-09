@@ -63,6 +63,7 @@
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Restoran seçimi";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // Restoran
             // 

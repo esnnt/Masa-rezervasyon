@@ -13,27 +13,32 @@ namespace Masa_rezervasyon
 {
     public partial class MusteriRez : Form
     {
-        public MusteriRez()
+        private string masanumarasi;          //masa numarası
+        private DateTime rezervasyonTarihi; // Rezervasyon tarih
+        private string mail;
+        private string baslangicSaati; // Rezervasyon başlangıç saati
+        private string bitisSaati; // Rezervasyon bitiş saati
+        public MusteriRez(string mail)
         {
+            this.mail = mail;
             InitializeComponent();
         }
         // Tüm masa butonları için kullanılacak click eventi
+
         private void btnMasa_Click(object sender, EventArgs e)
         {
             // Tıklanan butonu yakala
             Button masaButonu = sender as Button;
-
+         
             if (masaButonu != null)
             {
                 // Butonun üzerindeki masa numarasını al (örneğin: 5)
-                string masaNumarasi = masaButonu.Text;
-
-                // Ödeme formunu masa numarasıyla aç
-                odeme odemeFormu = new odeme(masaNumarasi);
+                string masanumarasi = masaButonu.Text;
+                odeme odemeFormu = new odeme(masanumarasi,rezervasyonTarihi.Date,mail,baslangicSaati,bitisSaati);
                 odemeFormu.ShowDialog();  // Yeni sayfayı göster
             }
         }
-
+       
 
         private void MusteriRez_Load(object sender, EventArgs e)
         {

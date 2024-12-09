@@ -19,7 +19,7 @@ namespace Masa_rezervasyon
             InitializeComponent();
         }
 
-        public void MenuItemleriniGetir(ListView yiyecek_list,ListView icecek_list)
+        public void MenuItemleriniGetir(ListView yiyecek_list, ListView icecek_list)
         {
             // Veritabanına bağlantı oluşturma
             MySqlConnection baglan = new MySqlConnection(
@@ -74,6 +74,31 @@ namespace Masa_rezervasyon
 
         }
 
+        public void RezervasyonlariGetir()
+        {
+            string connectionString = "Server=localhost;Database=masarezervasyon;Uid=root;Pwd=esin1021.Tkn";
+            string query = "SELECT rezervasyonId, masaNo, tarih, baslangicsaat, saatbitis, mail, secilenyemekler FROM odeme";
+
+            using (MySqlConnection baglan = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    baglan.Open();
+
+                    // Sorguyu çalıştır ve verileri DataTable içine al
+                    MySqlDataAdapter da = new MySqlDataAdapter(query, baglan);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    // DataGridView'e DataTable bağla
+                    dataGridView1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Hata: " + ex.Message);
+                }
+            }
+        }
 
         private void btn_onay_Click(object sender, EventArgs e)
         {
@@ -99,7 +124,7 @@ namespace Masa_rezervasyon
 
                 // RadioButton'lardan değer alma
                 string tur = string.Empty;
-                
+
 
                 if (yiyecek.Checked)
                 {
@@ -125,10 +150,10 @@ namespace Masa_rezervasyon
 
                 // Sorguyu çalıştırma
                 int result = command.ExecuteNonQuery();
-               
+
                 if (result > 0)
                 {
-                   
+
                     string yeniItem = txt_menu.Text;
 
                     // Eğer TextBox boş değilse, ListBox'a ekle
@@ -137,12 +162,12 @@ namespace Masa_rezervasyon
                         if (yiyecek.Checked)
                         {
                             yiyecek_list.Items.Add(yeniItem);
-                            MessageBox.Show("Ekleme başarılı.");
+                            
                         }
                         if (icecek.Checked)
                         {
                             icecek_list.Items.Add(yeniItem);
-                            MessageBox.Show("Ekleme başarılı.");
+                            
                         }
                         // TextBox'ı temizle
                         txt_menu.Clear();
@@ -177,7 +202,8 @@ namespace Masa_rezervasyon
 
         private void yonetici_Load(object sender, EventArgs e)
         {
-            MenuItemleriniGetir(yiyecek_list,icecek_list);
+            MenuItemleriniGetir(yiyecek_list, icecek_list);
+            RezervasyonlariGetir();
 
         }
 
@@ -187,7 +213,7 @@ namespace Masa_rezervasyon
                  "Server='localhost';" +
                  "Database='masarezervasyon';" +
                  "Uid='root';" +
-                 "Pwd='esin';");
+                 "Pwd='esin1021.Tkn';");
 
             try
             {
@@ -225,7 +251,7 @@ namespace Masa_rezervasyon
                     }
 
                 }
-               
+
                 else if (icecek_list.SelectedItems.Count > 0)
                 {
                     // Seçili öğenin adını al (örneğin, menü adı)
@@ -279,6 +305,10 @@ namespace Masa_rezervasyon
             }
 
         }
-  
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
