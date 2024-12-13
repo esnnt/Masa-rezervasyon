@@ -40,6 +40,7 @@
             dataGridView1.RowHeadersWidth = 49;
             dataGridView1.Size = new Size(709, 343);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // gecmis
             // 

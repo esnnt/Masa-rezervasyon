@@ -59,18 +59,18 @@
             groupBox1.Controls.Add(lbl_mail);
             groupBox1.Controls.Add(lbl_kullaniciadi);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(175, 23);
+            groupBox1.Location = new Point(175, 24);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(506, 419);
+            groupBox1.Size = new Size(506, 441);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Giriş Yap";
             // 
             // btn_geri
             // 
-            btn_geri.Location = new Point(0, 391);
+            btn_geri.Location = new Point(0, 412);
             btn_geri.Name = "btn_geri";
-            btn_geri.Size = new Size(90, 28);
+            btn_geri.Size = new Size(90, 29);
             btn_geri.TabIndex = 11;
             btn_geri.Text = "Geri";
             btn_geri.UseVisualStyleBackColor = true;
@@ -79,7 +79,7 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(259, 356);
+            linkLabel1.Location = new Point(259, 375);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(80, 20);
             linkLabel1.TabIndex = 10;
@@ -90,7 +90,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(148, 356);
+            label2.Location = new Point(148, 375);
             label2.Name = "label2";
             label2.Size = new Size(115, 20);
             label2.TabIndex = 9;
@@ -98,9 +98,9 @@
             // 
             // btngiris
             // 
-            btngiris.Location = new Point(306, 268);
+            btngiris.Location = new Point(306, 282);
             btngiris.Name = "btngiris";
-            btngiris.Size = new Size(90, 28);
+            btngiris.Size = new Size(90, 29);
             btngiris.TabIndex = 8;
             btngiris.Text = "Giriş";
             btngiris.UseVisualStyleBackColor = true;
@@ -108,40 +108,42 @@
             // 
             // btn_göz
             // 
-            btn_göz.Location = new Point(366, 223);
+            btn_göz.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_göz.Location = new Point(366, 235);
             btn_göz.Name = "btn_göz";
-            btn_göz.Size = new Size(30, 28);
+            btn_göz.Size = new Size(30, 29);
             btn_göz.TabIndex = 7;
             btn_göz.UseVisualStyleBackColor = true;
+            btn_göz.Click += btn_göz_Click;
             // 
             // txt_sifre
             // 
-            txt_sifre.Location = new Point(152, 223);
+            txt_sifre.Location = new Point(152, 235);
             txt_sifre.Name = "txt_sifre";
-            txt_sifre.Size = new Size(208, 26);
+            txt_sifre.Size = new Size(208, 27);
             txt_sifre.TabIndex = 6;
             txt_sifre.Text = "gtr34";
             // 
             // txt_mail
             // 
-            txt_mail.Location = new Point(150, 179);
+            txt_mail.Location = new Point(150, 188);
             txt_mail.Name = "txt_mail";
-            txt_mail.Size = new Size(210, 26);
+            txt_mail.Size = new Size(210, 27);
             txt_mail.TabIndex = 5;
             txt_mail.Text = "charon";
             // 
             // txt_kullaniciadi
             // 
-            txt_kullaniciadi.Location = new Point(152, 132);
+            txt_kullaniciadi.Location = new Point(152, 139);
             txt_kullaniciadi.Name = "txt_kullaniciadi";
-            txt_kullaniciadi.Size = new Size(208, 26);
+            txt_kullaniciadi.Size = new Size(208, 27);
             txt_kullaniciadi.TabIndex = 4;
             txt_kullaniciadi.Text = "mehmet";
             // 
             // lbl_sifre
             // 
             lbl_sifre.AutoSize = true;
-            lbl_sifre.Location = new Point(77, 229);
+            lbl_sifre.Location = new Point(77, 241);
             lbl_sifre.Name = "lbl_sifre";
             lbl_sifre.Size = new Size(42, 20);
             lbl_sifre.TabIndex = 3;
@@ -150,7 +152,7 @@
             // lbl_mail
             // 
             lbl_mail.AutoSize = true;
-            lbl_mail.Location = new Point(77, 185);
+            lbl_mail.Location = new Point(77, 195);
             lbl_mail.Name = "lbl_mail";
             lbl_mail.Size = new Size(41, 20);
             lbl_mail.TabIndex = 2;
@@ -159,7 +161,7 @@
             // lbl_kullaniciadi
             // 
             lbl_kullaniciadi.AutoSize = true;
-            lbl_kullaniciadi.Location = new Point(23, 138);
+            lbl_kullaniciadi.Location = new Point(23, 145);
             lbl_kullaniciadi.Name = "lbl_kullaniciadi";
             lbl_kullaniciadi.Size = new Size(95, 20);
             lbl_kullaniciadi.TabIndex = 1;
@@ -169,17 +171,17 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("LEMON MILK Medium", 16.2782612F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(150, 22);
+            label1.Location = new Point(150, 23);
             label1.Name = "label1";
-            label1.Size = new Size(210, 37);
+            label1.Size = new Size(226, 40);
             label1.TabIndex = 0;
             label1.Text = "HOŞ GELDİNİZ";
             // 
             // button1
             // 
-            button1.Location = new Point(731, 129);
+            button1.Location = new Point(731, 136);
             button1.Name = "button1";
-            button1.Size = new Size(90, 28);
+            button1.Size = new Size(90, 29);
             button1.TabIndex = 1;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
@@ -187,9 +189,9 @@
             // 
             // Giris
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(895, 479);
+            ClientSize = new Size(895, 504);
             Controls.Add(button1);
             Controls.Add(groupBox1);
             Name = "Giris";

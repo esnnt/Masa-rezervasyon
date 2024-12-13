@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 namespace Masa_rezervasyon
 {
     public partial class MusteriRez : Form
@@ -24,6 +25,7 @@ namespace Masa_rezervasyon
             InitializeComponent();
         }
         // Tüm masa butonları için kullanılacak click eventi
+        
 
         private void btnMasa_Click(object sender, EventArgs e)
         {
@@ -36,9 +38,12 @@ namespace Masa_rezervasyon
                 string masanumarasi = masaButonu.Text;
                 odeme odemeFormu = new odeme(masanumarasi,rezervasyonTarihi.Date,mail,baslangicSaati,bitisSaati);
                 odemeFormu.ShowDialog();  // Yeni sayfayı göster
+
             }
         }
        
+        
+
 
         private void MusteriRez_Load(object sender, EventArgs e)
         {

@@ -52,9 +52,9 @@
             groupBox1.Controls.Add(lbl_sifre);
             groupBox1.Controls.Add(lbl_mail);
             groupBox1.Controls.Add(lbl_kullaniciadi);
-            groupBox1.Location = new Point(178, 24);
+            groupBox1.Location = new Point(178, 25);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(506, 419);
+            groupBox1.Size = new Size(506, 441);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Kayıt Ol";
@@ -62,9 +62,9 @@
             // 
             // btn_geri
             // 
-            btn_geri.Location = new Point(0, 391);
+            btn_geri.Location = new Point(0, 412);
             btn_geri.Name = "btn_geri";
-            btn_geri.Size = new Size(90, 28);
+            btn_geri.Size = new Size(90, 29);
             btn_geri.TabIndex = 8;
             btn_geri.Text = "Geri";
             btn_geri.UseVisualStyleBackColor = true;
@@ -72,9 +72,9 @@
             // 
             // btn_kayit
             // 
-            btn_kayit.Location = new Point(323, 276);
+            btn_kayit.Location = new Point(332, 291);
             btn_kayit.Name = "btn_kayit";
-            btn_kayit.Size = new Size(90, 28);
+            btn_kayit.Size = new Size(86, 29);
             btn_kayit.TabIndex = 7;
             btn_kayit.Text = "Kayıt Ol";
             btn_kayit.UseVisualStyleBackColor = true;
@@ -82,37 +82,39 @@
             // 
             // btn_goz
             // 
-            btn_goz.Location = new Point(388, 233);
+            btn_goz.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_goz.Location = new Point(388, 245);
             btn_goz.Name = "btn_goz";
-            btn_goz.Size = new Size(25, 28);
+            btn_goz.Size = new Size(30, 29);
             btn_goz.TabIndex = 6;
             btn_goz.UseVisualStyleBackColor = true;
+            btn_goz.Click += btn_goz_Click;
             // 
             // txt_sifre
             // 
-            txt_sifre.Location = new Point(161, 233);
+            txt_sifre.Location = new Point(161, 245);
             txt_sifre.Name = "txt_sifre";
-            txt_sifre.Size = new Size(221, 26);
+            txt_sifre.Size = new Size(221, 27);
             txt_sifre.TabIndex = 5;
             // 
             // txt_mail
             // 
-            txt_mail.Location = new Point(161, 180);
+            txt_mail.Location = new Point(161, 189);
             txt_mail.Name = "txt_mail";
-            txt_mail.Size = new Size(221, 26);
+            txt_mail.Size = new Size(221, 27);
             txt_mail.TabIndex = 4;
             // 
             // txt_kullaniciadi
             // 
-            txt_kullaniciadi.Location = new Point(161, 125);
+            txt_kullaniciadi.Location = new Point(161, 132);
             txt_kullaniciadi.Name = "txt_kullaniciadi";
-            txt_kullaniciadi.Size = new Size(221, 26);
+            txt_kullaniciadi.Size = new Size(221, 27);
             txt_kullaniciadi.TabIndex = 3;
             // 
             // lbl_sifre
             // 
             lbl_sifre.AutoSize = true;
-            lbl_sifre.Location = new Point(101, 239);
+            lbl_sifre.Location = new Point(101, 252);
             lbl_sifre.Name = "lbl_sifre";
             lbl_sifre.Size = new Size(42, 20);
             lbl_sifre.TabIndex = 2;
@@ -121,7 +123,7 @@
             // lbl_mail
             // 
             lbl_mail.AutoSize = true;
-            lbl_mail.Location = new Point(101, 186);
+            lbl_mail.Location = new Point(101, 196);
             lbl_mail.Name = "lbl_mail";
             lbl_mail.Size = new Size(41, 20);
             lbl_mail.TabIndex = 1;
@@ -130,7 +132,7 @@
             // lbl_kullaniciadi
             // 
             lbl_kullaniciadi.AutoSize = true;
-            lbl_kullaniciadi.Location = new Point(47, 131);
+            lbl_kullaniciadi.Location = new Point(47, 138);
             lbl_kullaniciadi.Name = "lbl_kullaniciadi";
             lbl_kullaniciadi.Size = new Size(95, 20);
             lbl_kullaniciadi.TabIndex = 0;
@@ -138,9 +140,9 @@
             // 
             // Kayit
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(895, 479);
+            ClientSize = new Size(895, 504);
             Controls.Add(groupBox1);
             Name = "Kayit";
             Text = "Kayit";

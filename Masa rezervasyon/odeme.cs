@@ -34,6 +34,7 @@ namespace Masa_rezervasyon
 
         private void odeme_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.MinDate = DateTime.Today;
 
         }
 
@@ -60,7 +61,7 @@ namespace Masa_rezervasyon
             rezervasyonTarihi = dateTimePicker1.Value.Date;
             baslangicSaati = baslangicsaat.Text;
             bitisSaati = saatbitis.Text;
-            if(baslangicSaati== "Başlangıç Saati" || bitisSaati== "Bitiş Saati")
+            if (baslangicSaati == "Başlangıç Saati" || bitisSaati == "Bitiş Saati")
             {
                 MessageBox.Show("başlangıç ve bitiş saati seçin");
                 return;
@@ -95,7 +96,27 @@ namespace Masa_rezervasyon
                 try
                 {
                     conn.Open();
-                    
+                    //çakışan saatleri kontrol et
+                    string checkQuery = @"SELECT COUNT(*) 
+                                  FROM odeme 
+                                  WHERE masaNo = @masaNo 
+                                  AND tarih = @tarih 
+                                  AND (baslangicsaat < @saatbitis AND saatbitis > @baslangicsaat)";
+
+                    MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn);
+                    checkCmd.Parameters.AddWithValue("@masaNo", masanumarasi);
+                    checkCmd.Parameters.AddWithValue("@tarih", rezervasyonTarihi);
+                    checkCmd.Parameters.AddWithValue("@baslangicsaat", baslangicSaati);
+                    checkCmd.Parameters.AddWithValue("@saatbitis", bitisSaati);
+
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Bu saat aralığında bu masa zaten rezerve edilmiş. Lütfen başka bir saat seçin.");
+                        return;
+                    }
+
                     // Rezervasyonu kaydet
                     string insertQuery = @"INSERT INTO odeme (masaNo, tarih,mail, baslangicsaat, saatbitis, secilenyemekler) 
                                        VALUES (@masaNo, @tarih,@mail, @baslangicsaat, @saatbitis, @secilenyemekler)";
@@ -121,6 +142,38 @@ namespace Masa_rezervasyon
         }
 
         private void saatbitis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            // Başlangıç saatini al
+            string baslangicSaatiStr = baslangicsaat.SelectedItem?.ToString();
+            string bitisSaatiStr = saatbitis.SelectedItem?.ToString();
+
+            // Eğer başlangıç veya bitiş saati seçilmediyse işlem yapma
+            if (string.IsNullOrEmpty(baslangicSaatiStr) || string.IsNullOrEmpty(bitisSaatiStr))
+            {
+                return;
+            }
+
+            // Saatleri TimeSpan'e dönüştür
+            if (TimeSpan.TryParse(baslangicSaatiStr, out TimeSpan baslangicSaati) &&
+                TimeSpan.TryParse(bitisSaatiStr, out TimeSpan bitisSaati))
+            {
+                // Bitiş saati kontrolü
+                if (bitisSaati < baslangicSaati + TimeSpan.FromHours(1) || bitisSaati > baslangicSaati + TimeSpan.FromHours(3))
+                {
+                    MessageBox.Show("Minimum rezerve saatiniz 1 saat, maksimum rezerve saatiniz 3 saat olmalıdır.");
+                    saatbitis.SelectedIndex = -1; // Seçimi iptal et
+                }
+            }
+            else
+            {
+                MessageBox.Show("Geçerli bir saat seçin.");
+            }
+        }
+
+     
+
+        private void lbl_Masa_Click(object sender, EventArgs e)
         {
 
         }

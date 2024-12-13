@@ -80,472 +80,560 @@
             // label1
             // 
             label1.BackColor = Color.Black;
-            label1.Location = new Point(12, 198);
+            label1.Location = new Point(12, 208);
             label1.Name = "label1";
-            label1.Size = new Size(573, 10);
+            label1.Size = new Size(573, 11);
             label1.TabIndex = 0;
             // 
             // label2
             // 
             label2.BackColor = Color.Black;
-            label2.Location = new Point(584, 74);
+            label2.Location = new Point(584, 78);
             label2.Name = "label2";
-            label2.Size = new Size(299, 10);
+            label2.Size = new Size(299, 11);
             label2.TabIndex = 1;
             // 
             // label3
             // 
             label3.BackColor = Color.Black;
-            label3.Location = new Point(575, 74);
+            label3.Location = new Point(575, 78);
             label3.Name = "label3";
-            label3.Size = new Size(10, 134);
+            label3.Size = new Size(10, 141);
             label3.TabIndex = 2;
             // 
             // btn1
             // 
             btn1.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn1.Location = new Point(15, 225);
+            btn1.Location = new Point(15, 237);
             btn1.Name = "btn1";
-            btn1.Size = new Size(28, 28);
+            btn1.Size = new Size(28, 29);
             btn1.TabIndex = 3;
             btn1.Text = "1";
             btn1.UseVisualStyleBackColor = true;
+            btn1.TabIndexChanged += btnMasa_Click;
+            btn1.Click += btnMasa_Click;
             // 
             // btn2
             // 
             btn2.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn2.Location = new Point(15, 276);
+            btn2.Location = new Point(15, 291);
             btn2.Name = "btn2";
-            btn2.Size = new Size(28, 28);
+            btn2.Size = new Size(28, 29);
             btn2.TabIndex = 4;
             btn2.Text = "2";
             btn2.UseVisualStyleBackColor = true;
+            btn2.TabIndexChanged += btnMasa_Click;
+            btn2.Click += btnMasa_Click;
             // 
             // btn3
             // 
             btn3.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn3.Location = new Point(15, 329);
+            btn3.Location = new Point(15, 346);
             btn3.Name = "btn3";
-            btn3.Size = new Size(28, 28);
+            btn3.Size = new Size(28, 29);
             btn3.TabIndex = 5;
             btn3.Text = "3";
             btn3.UseVisualStyleBackColor = true;
+            btn3.TabIndexChanged += btnMasa_Click;
+            btn3.Click += btnMasa_Click;
             // 
             // btn6
             // 
             btn6.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn6.Location = new Point(86, 329);
+            btn6.Location = new Point(86, 346);
             btn6.Name = "btn6";
-            btn6.Size = new Size(28, 28);
+            btn6.Size = new Size(28, 29);
             btn6.TabIndex = 8;
             btn6.Text = "6";
             btn6.UseVisualStyleBackColor = true;
+            btn6.TextChanged += btnMasa_Click;
+            btn6.Click += btnMasa_Click;
             // 
             // btn5
             // 
             btn5.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn5.Location = new Point(86, 276);
+            btn5.Location = new Point(86, 291);
             btn5.Name = "btn5";
-            btn5.Size = new Size(28, 28);
+            btn5.Size = new Size(28, 29);
             btn5.TabIndex = 7;
             btn5.Text = "5";
             btn5.UseVisualStyleBackColor = true;
+            btn5.TextChanged += btnMasa_Click;
+            btn5.Click += btnMasa_Click;
             // 
             // btn4
             // 
             btn4.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn4.Location = new Point(86, 225);
+            btn4.Location = new Point(86, 237);
             btn4.Name = "btn4";
-            btn4.Size = new Size(28, 28);
+            btn4.Size = new Size(28, 29);
             btn4.TabIndex = 6;
             btn4.Text = "4";
             btn4.UseVisualStyleBackColor = true;
+            btn4.TextChanged += btnMasa_Click;
+            btn4.Click += btnMasa_Click;
             // 
             // btn12
             // 
             btn12.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn12.Location = new Point(233, 329);
+            btn12.Location = new Point(233, 346);
             btn12.Name = "btn12";
-            btn12.Size = new Size(28, 28);
+            btn12.Size = new Size(28, 29);
             btn12.TabIndex = 14;
             btn12.Text = "12";
             btn12.UseVisualStyleBackColor = true;
+            btn12.TextChanged += btnMasa_Click;
+            btn12.Click += btnMasa_Click;
             // 
             // btn11
             // 
             btn11.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn11.Location = new Point(233, 276);
+            btn11.Location = new Point(233, 291);
             btn11.Name = "btn11";
-            btn11.Size = new Size(28, 28);
+            btn11.Size = new Size(28, 29);
             btn11.TabIndex = 13;
             btn11.Text = "11";
             btn11.UseVisualStyleBackColor = true;
+            btn11.TextChanged += btnMasa_Click;
+            btn11.Click += btnMasa_Click;
             // 
             // btn10
             // 
             btn10.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn10.Location = new Point(233, 225);
+            btn10.Location = new Point(233, 237);
             btn10.Name = "btn10";
-            btn10.Size = new Size(28, 28);
+            btn10.Size = new Size(28, 29);
             btn10.TabIndex = 12;
             btn10.Text = "10";
             btn10.UseVisualStyleBackColor = true;
+            btn10.TextChanged += btnMasa_Click;
+            btn10.Click += btnMasa_Click;
             // 
             // btn9
             // 
             btn9.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn9.Location = new Point(157, 329);
+            btn9.Location = new Point(157, 346);
             btn9.Name = "btn9";
-            btn9.Size = new Size(28, 28);
+            btn9.Size = new Size(28, 29);
             btn9.TabIndex = 11;
             btn9.Text = "9";
             btn9.UseVisualStyleBackColor = true;
+            btn9.TextChanged += btnMasa_Click;
+            btn9.Click += btnMasa_Click;
             // 
             // btn8
             // 
             btn8.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn8.Location = new Point(157, 276);
+            btn8.Location = new Point(157, 291);
             btn8.Name = "btn8";
-            btn8.Size = new Size(28, 28);
+            btn8.Size = new Size(28, 29);
             btn8.TabIndex = 10;
             btn8.Text = "8";
             btn8.UseVisualStyleBackColor = true;
+            btn8.TextChanged += btnMasa_Click;
+            btn8.Click += btnMasa_Click;
             // 
             // btn7
             // 
             btn7.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn7.Location = new Point(157, 225);
+            btn7.Location = new Point(157, 237);
             btn7.Name = "btn7";
-            btn7.Size = new Size(28, 28);
+            btn7.Size = new Size(28, 29);
             btn7.TabIndex = 9;
             btn7.Text = "7";
             btn7.UseVisualStyleBackColor = true;
+            btn7.TextChanged += btnMasa_Click;
+            btn7.Click += btnMasa_Click;
             // 
             // btn24
             // 
             btn24.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn24.Location = new Point(538, 329);
+            btn24.Location = new Point(538, 346);
             btn24.Name = "btn24";
-            btn24.Size = new Size(28, 28);
+            btn24.Size = new Size(28, 29);
             btn24.TabIndex = 26;
             btn24.Text = "24";
             btn24.UseVisualStyleBackColor = true;
+            btn24.TextChanged += btnMasa_Click;
+            btn24.Click += btnMasa_Click;
             // 
             // btn23
             // 
             btn23.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn23.Location = new Point(538, 276);
+            btn23.Location = new Point(538, 291);
             btn23.Name = "btn23";
-            btn23.Size = new Size(28, 28);
+            btn23.Size = new Size(28, 29);
             btn23.TabIndex = 25;
             btn23.Text = "23";
             btn23.UseVisualStyleBackColor = true;
+            btn23.TextChanged += btnMasa_Click;
+            btn23.Click += btnMasa_Click;
             // 
             // btn22
             // 
             btn22.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn22.Location = new Point(538, 225);
+            btn22.Location = new Point(538, 237);
             btn22.Name = "btn22";
-            btn22.Size = new Size(28, 28);
+            btn22.Size = new Size(28, 29);
             btn22.TabIndex = 24;
             btn22.Text = "22";
             btn22.UseVisualStyleBackColor = true;
+            btn22.TextChanged += btnMasa_Click;
+            btn22.Click += btnMasa_Click;
             // 
             // btn21
             // 
             btn21.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn21.Location = new Point(462, 329);
+            btn21.Location = new Point(462, 346);
             btn21.Name = "btn21";
-            btn21.Size = new Size(28, 28);
+            btn21.Size = new Size(28, 29);
             btn21.TabIndex = 23;
             btn21.Text = "21";
             btn21.UseVisualStyleBackColor = true;
+            btn21.TextChanged += btnMasa_Click;
+            btn21.Click += btnMasa_Click;
             // 
             // btn20
             // 
             btn20.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn20.Location = new Point(462, 276);
+            btn20.Location = new Point(462, 291);
             btn20.Name = "btn20";
-            btn20.Size = new Size(28, 28);
+            btn20.Size = new Size(28, 29);
             btn20.TabIndex = 22;
             btn20.Text = "20";
             btn20.UseVisualStyleBackColor = true;
+            btn20.TextChanged += btnMasa_Click;
+            btn20.Click += btnMasa_Click;
             // 
             // btn19
             // 
             btn19.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn19.Location = new Point(462, 225);
+            btn19.Location = new Point(462, 237);
             btn19.Name = "btn19";
-            btn19.Size = new Size(28, 28);
+            btn19.Size = new Size(28, 29);
             btn19.TabIndex = 21;
             btn19.Text = "19";
             btn19.UseVisualStyleBackColor = true;
+            btn19.TextChanged += btnMasa_Click;
+            btn19.Click += btnMasa_Click;
             // 
             // btn18
             // 
             btn18.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn18.Location = new Point(380, 329);
+            btn18.Location = new Point(380, 346);
             btn18.Name = "btn18";
-            btn18.Size = new Size(28, 28);
+            btn18.Size = new Size(28, 29);
             btn18.TabIndex = 20;
             btn18.Text = "18";
             btn18.UseVisualStyleBackColor = true;
+            btn18.TextChanged += btnMasa_Click;
+            btn18.Click += btnMasa_Click;
             // 
             // btn17
             // 
             btn17.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn17.Location = new Point(380, 276);
+            btn17.Location = new Point(380, 291);
             btn17.Name = "btn17";
-            btn17.Size = new Size(28, 28);
+            btn17.Size = new Size(28, 29);
             btn17.TabIndex = 19;
             btn17.Text = "17";
             btn17.UseVisualStyleBackColor = true;
+            btn17.TextChanged += btnMasa_Click;
+            btn17.Click += btnMasa_Click;
             // 
             // btn16
             // 
             btn16.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn16.Location = new Point(380, 225);
+            btn16.Location = new Point(380, 237);
             btn16.Name = "btn16";
-            btn16.Size = new Size(28, 28);
+            btn16.Size = new Size(28, 29);
             btn16.TabIndex = 18;
             btn16.Text = "16";
             btn16.UseVisualStyleBackColor = true;
+            btn16.TextChanged += btnMasa_Click;
+            btn16.Click += btnMasa_Click;
             // 
             // btn15
             // 
             btn15.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn15.Location = new Point(309, 329);
+            btn15.Location = new Point(309, 346);
             btn15.Name = "btn15";
-            btn15.Size = new Size(28, 28);
+            btn15.Size = new Size(28, 29);
             btn15.TabIndex = 17;
             btn15.Text = "15";
             btn15.UseVisualStyleBackColor = true;
+            btn15.TextChanged += btnMasa_Click;
+            btn15.Click += btnMasa_Click;
             // 
             // btn14
             // 
             btn14.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn14.Location = new Point(309, 276);
+            btn14.Location = new Point(309, 291);
             btn14.Name = "btn14";
-            btn14.Size = new Size(28, 28);
+            btn14.Size = new Size(28, 29);
             btn14.TabIndex = 16;
             btn14.Text = "14";
             btn14.UseVisualStyleBackColor = true;
+            btn14.TextChanged += btnMasa_Click;
+            btn14.Click += btnMasa_Click;
             // 
             // btn13
             // 
             btn13.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn13.Location = new Point(309, 225);
+            btn13.Location = new Point(309, 237);
             btn13.Name = "btn13";
-            btn13.Size = new Size(28, 28);
+            btn13.Size = new Size(28, 29);
             btn13.TabIndex = 15;
             btn13.Text = "13";
             btn13.UseVisualStyleBackColor = true;
+            btn13.TextChanged += btnMasa_Click;
+            btn13.Click += btnMasa_Click;
             // 
             // btn42
             // 
             btn42.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn42.Location = new Point(845, 225);
+            btn42.Location = new Point(845, 237);
             btn42.Name = "btn42";
-            btn42.Size = new Size(28, 28);
+            btn42.Size = new Size(28, 29);
             btn42.TabIndex = 38;
             btn42.Text = "42";
             btn42.UseVisualStyleBackColor = true;
+            btn42.TextChanged += btnMasa_Click;
+            btn42.Click += btnMasa_Click;
             // 
             // btn41
             // 
             btn41.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn41.Location = new Point(845, 166);
+            btn41.Location = new Point(845, 175);
             btn41.Name = "btn41";
-            btn41.Size = new Size(28, 28);
+            btn41.Size = new Size(28, 29);
             btn41.TabIndex = 37;
             btn41.Text = "41";
             btn41.UseVisualStyleBackColor = true;
+            btn41.TextChanged += btnMasa_Click;
+            btn41.Click += btnMasa_Click;
             // 
             // btn40
             // 
             btn40.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn40.Location = new Point(845, 106);
+            btn40.Location = new Point(845, 112);
             btn40.Name = "btn40";
-            btn40.Size = new Size(28, 28);
+            btn40.Size = new Size(28, 29);
             btn40.TabIndex = 36;
             btn40.Text = "40";
             btn40.UseVisualStyleBackColor = true;
+            btn40.TextChanged += btnMasa_Click;
+            btn40.Click += btnMasa_Click;
             // 
             // btn37
             // 
             btn37.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn37.Location = new Point(769, 225);
+            btn37.Location = new Point(769, 237);
             btn37.Name = "btn37";
-            btn37.Size = new Size(28, 28);
+            btn37.Size = new Size(28, 29);
             btn37.TabIndex = 35;
             btn37.Text = "37";
             btn37.UseVisualStyleBackColor = true;
+            btn37.TextChanged += btnMasa_Click;
+            btn37.Click += btnMasa_Click;
             // 
             // btn36
             // 
             btn36.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn36.Location = new Point(769, 166);
+            btn36.Location = new Point(769, 175);
             btn36.Name = "btn36";
-            btn36.Size = new Size(28, 28);
+            btn36.Size = new Size(28, 29);
             btn36.TabIndex = 34;
             btn36.Text = "36";
             btn36.UseVisualStyleBackColor = true;
+            btn36.TextChanged += btnMasa_Click;
+            btn36.Click += btnMasa_Click;
             // 
             // btn35
             // 
             btn35.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn35.Location = new Point(769, 106);
+            btn35.Location = new Point(769, 112);
             btn35.Name = "btn35";
-            btn35.Size = new Size(28, 28);
+            btn35.Size = new Size(28, 29);
             btn35.TabIndex = 33;
             btn35.Text = "35";
             btn35.UseVisualStyleBackColor = true;
+            btn35.TextChanged += btnMasa_Click;
+            btn35.Click += btnMasa_Click;
             // 
             // btn32
             // 
             btn32.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn32.Location = new Point(687, 225);
+            btn32.Location = new Point(687, 237);
             btn32.Name = "btn32";
-            btn32.Size = new Size(28, 28);
+            btn32.Size = new Size(28, 29);
             btn32.TabIndex = 32;
             btn32.Text = "32";
             btn32.UseVisualStyleBackColor = true;
+            btn32.TextChanged += btnMasa_Click;
+            btn32.Click += btnMasa_Click;
             // 
             // btn31
             // 
             btn31.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn31.Location = new Point(687, 166);
+            btn31.Location = new Point(687, 175);
             btn31.Name = "btn31";
-            btn31.Size = new Size(28, 28);
+            btn31.Size = new Size(28, 29);
             btn31.TabIndex = 31;
             btn31.Text = "31";
             btn31.UseVisualStyleBackColor = true;
+            btn31.TextChanged += btnMasa_Click;
+            btn31.Click += btnMasa_Click;
             // 
             // btn30
             // 
             btn30.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn30.Location = new Point(687, 106);
+            btn30.Location = new Point(687, 112);
             btn30.Name = "btn30";
-            btn30.Size = new Size(28, 28);
+            btn30.Size = new Size(28, 29);
             btn30.TabIndex = 30;
             btn30.Text = "30";
             btn30.UseVisualStyleBackColor = true;
+            btn30.TextChanged += btnMasa_Click;
+            btn30.Click += btnMasa_Click;
             // 
             // btn27
             // 
             btn27.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn27.Location = new Point(611, 225);
+            btn27.Location = new Point(611, 237);
             btn27.Name = "btn27";
-            btn27.Size = new Size(28, 28);
+            btn27.Size = new Size(28, 29);
             btn27.TabIndex = 29;
             btn27.Text = "27";
             btn27.UseVisualStyleBackColor = true;
+            btn27.TextChanged += btnMasa_Click;
+            btn27.Click += btnMasa_Click;
             // 
             // btn26
             // 
             btn26.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn26.Location = new Point(611, 166);
+            btn26.Location = new Point(611, 175);
             btn26.Name = "btn26";
-            btn26.Size = new Size(28, 28);
+            btn26.Size = new Size(28, 29);
             btn26.TabIndex = 28;
             btn26.Text = "26";
             btn26.UseVisualStyleBackColor = true;
+            btn26.TextChanged += btnMasa_Click;
+            btn26.Click += btnMasa_Click;
             // 
             // btn25
             // 
             btn25.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn25.Location = new Point(611, 106);
+            btn25.Location = new Point(611, 112);
             btn25.Name = "btn25";
-            btn25.Size = new Size(28, 28);
+            btn25.Size = new Size(28, 29);
             btn25.TabIndex = 27;
             btn25.Text = "25";
             btn25.UseVisualStyleBackColor = true;
+            btn25.TextChanged += btnMasa_Click;
+            btn25.Click += btnMasa_Click;
             // 
             // btn44
             // 
             btn44.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn44.Location = new Point(845, 329);
+            btn44.Location = new Point(845, 346);
             btn44.Name = "btn44";
-            btn44.Size = new Size(28, 28);
+            btn44.Size = new Size(28, 29);
             btn44.TabIndex = 46;
             btn44.Text = "44";
             btn44.UseVisualStyleBackColor = true;
+            btn44.TextChanged += btnMasa_Click;
+            btn44.Click += btnMasa_Click;
             // 
             // btn43
             // 
             btn43.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn43.Location = new Point(845, 276);
+            btn43.Location = new Point(845, 291);
             btn43.Name = "btn43";
-            btn43.Size = new Size(28, 28);
+            btn43.Size = new Size(28, 29);
             btn43.TabIndex = 45;
             btn43.Text = "43";
             btn43.UseVisualStyleBackColor = true;
+            btn43.TextChanged += btnMasa_Click;
+            btn43.Click += btnMasa_Click;
             // 
             // btn39
             // 
             btn39.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn39.Location = new Point(769, 329);
+            btn39.Location = new Point(769, 346);
             btn39.Name = "btn39";
-            btn39.Size = new Size(28, 28);
+            btn39.Size = new Size(28, 29);
             btn39.TabIndex = 44;
             btn39.Text = "39";
             btn39.UseVisualStyleBackColor = true;
+            btn39.TextChanged += btnMasa_Click;
+            btn39.Click += btnMasa_Click;
             // 
             // btn38
             // 
             btn38.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn38.Location = new Point(769, 276);
+            btn38.Location = new Point(769, 291);
             btn38.Name = "btn38";
-            btn38.Size = new Size(28, 28);
+            btn38.Size = new Size(28, 29);
             btn38.TabIndex = 43;
             btn38.Text = "38";
             btn38.UseVisualStyleBackColor = true;
+            btn38.TextChanged += btnMasa_Click;
+            btn38.Click += btnMasa_Click;
             // 
             // btn34
             // 
             btn34.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn34.Location = new Point(687, 329);
+            btn34.Location = new Point(687, 346);
             btn34.Name = "btn34";
-            btn34.Size = new Size(28, 28);
+            btn34.Size = new Size(28, 29);
             btn34.TabIndex = 42;
             btn34.Text = "34";
             btn34.UseVisualStyleBackColor = true;
+            btn34.TextChanged += btnMasa_Click;
+            btn34.Click += btnMasa_Click;
             // 
             // btn33
             // 
             btn33.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn33.Location = new Point(687, 276);
+            btn33.Location = new Point(687, 291);
             btn33.Name = "btn33";
-            btn33.Size = new Size(28, 28);
+            btn33.Size = new Size(28, 29);
             btn33.TabIndex = 41;
             btn33.Text = "3334";
             btn33.UseVisualStyleBackColor = true;
+            btn33.TextChanged += btnMasa_Click;
+            btn33.Click += btnMasa_Click;
             // 
             // btn29
             // 
             btn29.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn29.Location = new Point(611, 329);
+            btn29.Location = new Point(611, 346);
             btn29.Name = "btn29";
-            btn29.Size = new Size(28, 28);
+            btn29.Size = new Size(28, 29);
             btn29.TabIndex = 40;
             btn29.Text = "29";
             btn29.UseVisualStyleBackColor = true;
+            btn29.TextChanged += btnMasa_Click;
+            btn29.Click += btnMasa_Click;
             // 
             // btn28
             // 
             btn28.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn28.Location = new Point(611, 276);
+            btn28.Location = new Point(611, 291);
             btn28.Name = "btn28";
-            btn28.Size = new Size(28, 28);
+            btn28.Size = new Size(28, 29);
             btn28.TabIndex = 39;
             btn28.Text = "28";
             btn28.UseVisualStyleBackColor = true;
+            btn28.TextChanged += btnMasa_Click;
+            btn28.Click += btnMasa_Click;
             // 
             // MusteriRez
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(895, 479);
+            ClientSize = new Size(895, 504);
             Controls.Add(btn44);
             Controls.Add(btn43);
             Controls.Add(btn39);

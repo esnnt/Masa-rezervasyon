@@ -31,7 +31,7 @@ namespace Masa_rezervasyon
             {
                 try
                 {
-                  //  baglan.Open();
+                    //  baglan.Open();
                     string kullaniciadi = txt_kullaniciadi.Text;
                     string sifre = txt_sifre.Text;
                     string mail = txt_mail.Text;
@@ -69,9 +69,7 @@ namespace Masa_rezervasyon
                     if (result > 0)
                     {
                         MessageBox.Show("Kayıt başarıyla tamamlandı.");
-                        txt_kullaniciadi.Clear();
-                        txt_sifre.Clear();
-                        txt_mail.Clear();
+                        this.Close();
                     }
 
                     else
@@ -80,7 +78,8 @@ namespace Masa_rezervasyon
                     }
                     baglan.Close();
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     MessageBox.Show(ex.ToString());
                 }
             }
@@ -95,7 +94,27 @@ namespace Masa_rezervasyon
 
         private void Kayit_Load(object sender, EventArgs e)
         {
+            txt_sifre.UseSystemPasswordChar = true; // Şifre başlangıçta gizli
+            btn_goz.BackgroundImage = Image.FromFile("C:\\Users\\esint\\Desktop\\k\\bitirme projesi\\hide.png"); // Kapalı göz simgesi
+        }
+        private bool sifreGizli = true;
+        private void btn_goz_Click(object sender, EventArgs e)
+        {
 
+            if (sifreGizli)
+            {
+                // Eğer şifre gizliyse, açık göz simgesini ayarla ve şifreyi görünür yap
+                txt_sifre.UseSystemPasswordChar = false; // Şifreyi görünür yap
+                btn_goz.BackgroundImage = Image.FromFile("C:\\Users\\esint\\Desktop\\k\\bitirme projesi\\witness.png"); // Açık göz simgesi
+                sifreGizli = false; // Durumu güncelle
+            }
+            else
+            {
+                // Eğer şifre görünüyorsa, kapalı göz simgesini ayarla ve şifreyi gizle
+                txt_sifre.UseSystemPasswordChar = true; // Şifreyi gizle
+                btn_goz.BackgroundImage = Image.FromFile("C:\\Users\\esint\\Desktop\\k\\bitirme projesi\\hide.png"); // Kapalı göz simgesi
+                sifreGizli = true; // Durumu güncelle   
+            }
         }
     }
 }

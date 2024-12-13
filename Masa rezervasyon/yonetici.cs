@@ -162,15 +162,17 @@ namespace Masa_rezervasyon
                         if (yiyecek.Checked)
                         {
                             yiyecek_list.Items.Add(yeniItem);
-                            
+                            txt_menu.Clear();
+
                         }
                         if (icecek.Checked)
                         {
                             icecek_list.Items.Add(yeniItem);
-                            
+                            txt_menu.Clear();
+
                         }
                         // TextBox'ı temizle
-                        txt_menu.Clear();
+
                     }
                     else
                     {
@@ -188,7 +190,7 @@ namespace Masa_rezervasyon
             }
             finally
             {
-                txt_menu.Clear();        // TextBox'ı temizler
+                // txt_menu.Clear();        // TextBox'ı temizler
                 yiyecek.Checked = false; // RadioButton'u false'a çekerek temizler
                 icecek.Checked = false;
 
@@ -308,7 +310,50 @@ namespace Masa_rezervasyon
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+         
+            string connectionString = "Server=localhost;Database=masarezervasyon;Uid=root;Pwd='esin1021.Tkn';";
 
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        // Eğer seçim kutusu işaretlenmişse
+                        if (Convert.ToBoolean(row.Cells["Secim"].Value) == true)
+                        {
+                            int rezervasyonId = Convert.ToInt32(row.Cells["rezervasyonId"].Value);
+
+                            // Rezervasyonu sil
+                            string query = @"DELETE FROM rezervasyonlar WHERE rezervasyonId = @rezervasyonId";
+
+                            MySqlCommand cmd = new MySqlCommand(query, conn);
+                            cmd.Parameters.AddWithValue("@rezervasyonId", rezervasyonId);
+
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    MessageBox.Show("Seçili rezervasyonlar başarıyla iptal edildi.");
+                    RezervasyonlariGetir(); // Listeyi güncelle
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bir hata oluştu: " + ex.Message);
+                }
+            }
         }
+
+
+        private void rez_iptal_Click(object sender, EventArgs e)
+        {
+       
+            
+        }
+
     }
 }
+
+

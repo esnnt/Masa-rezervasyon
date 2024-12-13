@@ -11,16 +11,16 @@ using MySql.Data.MySqlClient;
 
 namespace Masa_rezervasyon
 {
-    // Mail adresini saklayacak sınıf
-   
+
+
 
     public partial class Giris : Form
     {
-  
+
         public Giris()
         {
             InitializeComponent();
-         
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -41,7 +41,8 @@ namespace Masa_rezervasyon
 
         private void Giris_Load(object sender, EventArgs e)
         {
-
+            txt_sifre.UseSystemPasswordChar = true; // Şifre başlangıçta gizli
+            btn_göz.BackgroundImage = Image.FromFile("C:\\Users\\esint\\Desktop\\k\\bitirme projesi\\hide.png"); // Kapalı göz simgesi
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,16 +50,16 @@ namespace Masa_rezervasyon
             yonetici yntc = new yonetici();
             yntc.Show();
         }
-       
+
         private void btngiris_Click(object sender, EventArgs e)
         {
             string kullaniciadi = txt_kullaniciadi.Text;
-            string mail=txt_mail.Text;  
+            string mail = txt_mail.Text;
             string sifre = txt_sifre.Text;
 
 
-        // Veritabanı bağlantısı
-        string connectionString = "Server=localhost;Database=masarezervasyon;Uid=root;Pwd='esin1021.Tkn';";
+            // Veritabanı bağlantısı
+            string connectionString = "Server=localhost;Database=masarezervasyon;Uid=root;Pwd='esin1021.Tkn';";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -85,23 +86,19 @@ namespace Masa_rezervasyon
                     {
                         // Giriş başarılı, ana ekrana geçiş yapılabilir
                         // Örnek: Ana formu açın
-                        this.Hide(); // Mevcut formu gizleyin
+                        this.Close(); // Mevcut formu gizleyin
                         MusteriRez mstr = new MusteriRez(mail); // Ana form örneği
                         mstr.Show(); // Ana formu açın
-                       
+
 
                     }
-                    if (mail == "e")
+                     if (mail == "e")
                     {
 
                         yonetici yntc = new yonetici();
                         this.Close();
                         yntc.Show();
                     }
-                    /* if("@mail"==mail)
-                    {
-                        Console.WriteLine("Bu mail kullanımda. Lütfem başka bir mail giriniz.");
-                    }*/
 
                     else
                     {
@@ -114,6 +111,25 @@ namespace Masa_rezervasyon
                     MessageBox.Show("Hata: " + ex.Message);
                 }
 
+            }
+        }
+        private bool sifreGizli=true;
+        private void btn_göz_Click(object sender, EventArgs e)
+        {
+
+            if (sifreGizli)
+            {
+                // Eğer şifre gizliyse, açık göz simgesini ayarla ve şifreyi görünür yap
+                txt_sifre.UseSystemPasswordChar = false; // Şifreyi görünür yap
+                btn_göz.BackgroundImage = Image.FromFile("C:\\Users\\esint\\Desktop\\k\\bitirme projesi\\witness.png"); // Açık göz simgesi
+                sifreGizli = false; // Durumu güncelle
+            }
+            else
+            {
+                // Eğer şifre görünüyorsa, kapalı göz simgesini ayarla ve şifreyi gizle
+                txt_sifre.UseSystemPasswordChar = true; // Şifreyi gizle
+                button1.BackgroundImage = Image.FromFile("C:\\Users\\esint\\Desktop\\k\\bitirme projesi\\hide.png"); // Kapalı göz simgesi
+                sifreGizli = true; // Durumu güncelle   
             }
         }
     }
