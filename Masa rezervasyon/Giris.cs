@@ -128,7 +128,7 @@ namespace Masa_rezervasyon
             {
                 // Eğer şifre görünüyorsa, kapalı göz simgesini ayarla ve şifreyi gizle
                 txt_sifre.UseSystemPasswordChar = true; // Şifreyi gizle
-                button1.BackgroundImage = Image.FromFile("C:\\Users\\esint\\Desktop\\k\\bitirme projesi\\hide.png"); // Kapalı göz simgesi
+                btn_göz.BackgroundImage = Image.FromFile("C:\\Users\\esint\\Desktop\\k\\bitirme projesi\\hide.png"); // Kapalı göz simgesi
                 sifreGizli = true; // Durumu güncelle   
             }
         }

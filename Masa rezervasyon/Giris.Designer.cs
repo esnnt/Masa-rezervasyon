@@ -41,7 +41,6 @@
             lbl_mail = new Label();
             lbl_kullaniciadi = new Label();
             label1 = new Label();
-            button1 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,7 +60,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(175, 24);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(506, 441);
+            groupBox1.Size = new Size(507, 441);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Giriş Yap";
@@ -177,22 +176,11 @@
             label1.TabIndex = 0;
             label1.Text = "HOŞ GELDİNİZ";
             // 
-            // button1
-            // 
-            button1.Location = new Point(731, 136);
-            button1.Name = "button1";
-            button1.Size = new Size(90, 29);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // Giris
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(895, 504);
-            Controls.Add(button1);
             Controls.Add(groupBox1);
             Name = "Giris";
             Text = "Giris";
@@ -217,6 +205,5 @@
         private Label label2;
         private Button btngiris;
         private Button btn_geri;
-        private Button button1;
     }
 }

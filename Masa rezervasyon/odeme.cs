@@ -34,7 +34,7 @@ namespace Masa_rezervasyon
 
         private void odeme_Load(object sender, EventArgs e)
         {
-            dateTimePicker1.MinDate = DateTime.Today;
+            dateTimePicker1.MinDate = DateTime.Today; //bulundupu günden önceki günleri seçmemek için bulunduğu gün ve sonrakileri gösteriyor
 
         }
 

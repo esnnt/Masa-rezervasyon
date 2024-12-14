@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            masa_tasi = new Button();
             btn_onay = new Button();
             yiyecek_list = new ListView();
             label2 = new Label();
@@ -41,7 +40,9 @@
             lbl_icecek = new Label();
             lbl_yiyecek = new Label();
             rez_iptal = new Button();
-            secim = new DataGridViewCheckBoxColumn();
+            textBox1 = new TextBox();
+            label1 = new Label();
+            btn_yenile = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -49,26 +50,13 @@
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { secim });
             dataGridView1.Location = new Point(12, 13);
-            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 49;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(623, 331);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // masa_tasi
-            // 
-            masa_tasi.Location = new Point(12, 462);
-            masa_tasi.Name = "masa_tasi";
-            masa_tasi.Size = new Size(136, 29);
-            masa_tasi.TabIndex = 3;
-            masa_tasi.Text = "Masa Taşıma";
-            masa_tasi.UseVisualStyleBackColor = true;
             // 
             // btn_onay
             // 
@@ -166,7 +154,7 @@
             // 
             // rez_iptal
             // 
-            rez_iptal.Location = new Point(14, 354);
+            rez_iptal.Location = new Point(205, 350);
             rez_iptal.Name = "rez_iptal";
             rez_iptal.Size = new Size(145, 29);
             rez_iptal.TabIndex = 15;
@@ -174,19 +162,40 @@
             rez_iptal.UseVisualStyleBackColor = true;
             rez_iptal.Click += rez_iptal_Click;
             // 
-            // secim
+            // textBox1
             // 
-            secim.HeaderText = "Seç";
-            secim.MinimumWidth = 6;
-            secim.Name = "secim";
-            secim.ReadOnly = true;
-            secim.Width = 38;
+            textBox1.Location = new Point(93, 350);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(94, 27);
+            textBox1.TabIndex = 16;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(13, 355);
+            label1.Name = "label1";
+            label1.Size = new Size(78, 20);
+            label1.TabIndex = 17;
+            label1.Text = "Müşteri id:";
+            // 
+            // btn_yenile
+            // 
+            btn_yenile.Location = new Point(541, 349);
+            btn_yenile.Name = "btn_yenile";
+            btn_yenile.Size = new Size(94, 29);
+            btn_yenile.TabIndex = 18;
+            btn_yenile.Text = "Yenile";
+            btn_yenile.UseVisualStyleBackColor = true;
+            btn_yenile.Click += btn_yenile_Click;
             // 
             // yonetici
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(895, 504);
+            Controls.Add(btn_yenile);
+            Controls.Add(label1);
+            Controls.Add(textBox1);
             Controls.Add(rez_iptal);
             Controls.Add(lbl_yiyecek);
             Controls.Add(lbl_icecek);
@@ -198,7 +207,6 @@
             Controls.Add(label2);
             Controls.Add(yiyecek_list);
             Controls.Add(btn_onay);
-            Controls.Add(masa_tasi);
             Controls.Add(dataGridView1);
             Name = "yonetici";
             Text = "yonetici";
@@ -213,7 +221,6 @@
         
 
         private DataGridView dataGridView1;
-        private Button masa_tasi;
         private Button btn_onay;
         private Label label2;
         private TextBox txt_menu;
@@ -224,7 +231,9 @@
         private Label lbl_icecek;
         private Label lbl_yiyecek;
         private Button rez_iptal;
-        private DataGridViewCheckBoxColumn secim;
+        private TextBox textBox1;
+        private Label label1;
+        private Button btn_yenile;
         // private ListView listView1;
     }
 }

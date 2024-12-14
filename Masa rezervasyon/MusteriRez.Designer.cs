@@ -75,12 +75,20 @@
             btn33 = new Button();
             btn29 = new Button();
             btn28 = new Button();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            richTextBox1 = new RichTextBox();
+            label7 = new Label();
+            button1 = new Button();
+            txt_mail = new TextBox();
+            label8 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.BackColor = Color.Black;
-            label1.Location = new Point(12, 208);
+            label1.Location = new Point(20, 179);
             label1.Name = "label1";
             label1.Size = new Size(573, 11);
             label1.TabIndex = 0;
@@ -88,7 +96,7 @@
             // label2
             // 
             label2.BackColor = Color.Black;
-            label2.Location = new Point(584, 78);
+            label2.Location = new Point(592, 49);
             label2.Name = "label2";
             label2.Size = new Size(299, 11);
             label2.TabIndex = 1;
@@ -96,7 +104,7 @@
             // label3
             // 
             label3.BackColor = Color.Black;
-            label3.Location = new Point(575, 78);
+            label3.Location = new Point(583, 49);
             label3.Name = "label3";
             label3.Size = new Size(10, 141);
             label3.TabIndex = 2;
@@ -104,7 +112,7 @@
             // btn1
             // 
             btn1.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn1.Location = new Point(15, 237);
+            btn1.Location = new Point(23, 208);
             btn1.Name = "btn1";
             btn1.Size = new Size(28, 29);
             btn1.TabIndex = 3;
@@ -116,7 +124,7 @@
             // btn2
             // 
             btn2.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn2.Location = new Point(15, 291);
+            btn2.Location = new Point(23, 262);
             btn2.Name = "btn2";
             btn2.Size = new Size(28, 29);
             btn2.TabIndex = 4;
@@ -128,7 +136,7 @@
             // btn3
             // 
             btn3.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn3.Location = new Point(15, 346);
+            btn3.Location = new Point(23, 317);
             btn3.Name = "btn3";
             btn3.Size = new Size(28, 29);
             btn3.TabIndex = 5;
@@ -140,7 +148,7 @@
             // btn6
             // 
             btn6.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn6.Location = new Point(86, 346);
+            btn6.Location = new Point(94, 317);
             btn6.Name = "btn6";
             btn6.Size = new Size(28, 29);
             btn6.TabIndex = 8;
@@ -152,7 +160,7 @@
             // btn5
             // 
             btn5.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn5.Location = new Point(86, 291);
+            btn5.Location = new Point(94, 262);
             btn5.Name = "btn5";
             btn5.Size = new Size(28, 29);
             btn5.TabIndex = 7;
@@ -164,7 +172,7 @@
             // btn4
             // 
             btn4.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn4.Location = new Point(86, 237);
+            btn4.Location = new Point(94, 208);
             btn4.Name = "btn4";
             btn4.Size = new Size(28, 29);
             btn4.TabIndex = 6;
@@ -176,7 +184,7 @@
             // btn12
             // 
             btn12.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn12.Location = new Point(233, 346);
+            btn12.Location = new Point(241, 317);
             btn12.Name = "btn12";
             btn12.Size = new Size(28, 29);
             btn12.TabIndex = 14;
@@ -188,7 +196,7 @@
             // btn11
             // 
             btn11.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn11.Location = new Point(233, 291);
+            btn11.Location = new Point(241, 262);
             btn11.Name = "btn11";
             btn11.Size = new Size(28, 29);
             btn11.TabIndex = 13;
@@ -200,7 +208,7 @@
             // btn10
             // 
             btn10.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn10.Location = new Point(233, 237);
+            btn10.Location = new Point(241, 208);
             btn10.Name = "btn10";
             btn10.Size = new Size(28, 29);
             btn10.TabIndex = 12;
@@ -212,7 +220,7 @@
             // btn9
             // 
             btn9.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn9.Location = new Point(157, 346);
+            btn9.Location = new Point(165, 317);
             btn9.Name = "btn9";
             btn9.Size = new Size(28, 29);
             btn9.TabIndex = 11;
@@ -224,7 +232,7 @@
             // btn8
             // 
             btn8.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn8.Location = new Point(157, 291);
+            btn8.Location = new Point(165, 262);
             btn8.Name = "btn8";
             btn8.Size = new Size(28, 29);
             btn8.TabIndex = 10;
@@ -236,7 +244,7 @@
             // btn7
             // 
             btn7.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn7.Location = new Point(157, 237);
+            btn7.Location = new Point(165, 208);
             btn7.Name = "btn7";
             btn7.Size = new Size(28, 29);
             btn7.TabIndex = 9;
@@ -248,7 +256,7 @@
             // btn24
             // 
             btn24.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn24.Location = new Point(538, 346);
+            btn24.Location = new Point(546, 317);
             btn24.Name = "btn24";
             btn24.Size = new Size(28, 29);
             btn24.TabIndex = 26;
@@ -260,7 +268,7 @@
             // btn23
             // 
             btn23.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn23.Location = new Point(538, 291);
+            btn23.Location = new Point(546, 262);
             btn23.Name = "btn23";
             btn23.Size = new Size(28, 29);
             btn23.TabIndex = 25;
@@ -272,7 +280,7 @@
             // btn22
             // 
             btn22.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn22.Location = new Point(538, 237);
+            btn22.Location = new Point(546, 208);
             btn22.Name = "btn22";
             btn22.Size = new Size(28, 29);
             btn22.TabIndex = 24;
@@ -284,7 +292,7 @@
             // btn21
             // 
             btn21.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn21.Location = new Point(462, 346);
+            btn21.Location = new Point(470, 317);
             btn21.Name = "btn21";
             btn21.Size = new Size(28, 29);
             btn21.TabIndex = 23;
@@ -296,7 +304,7 @@
             // btn20
             // 
             btn20.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn20.Location = new Point(462, 291);
+            btn20.Location = new Point(470, 262);
             btn20.Name = "btn20";
             btn20.Size = new Size(28, 29);
             btn20.TabIndex = 22;
@@ -308,7 +316,7 @@
             // btn19
             // 
             btn19.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn19.Location = new Point(462, 237);
+            btn19.Location = new Point(470, 208);
             btn19.Name = "btn19";
             btn19.Size = new Size(28, 29);
             btn19.TabIndex = 21;
@@ -320,7 +328,7 @@
             // btn18
             // 
             btn18.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn18.Location = new Point(380, 346);
+            btn18.Location = new Point(388, 317);
             btn18.Name = "btn18";
             btn18.Size = new Size(28, 29);
             btn18.TabIndex = 20;
@@ -332,7 +340,7 @@
             // btn17
             // 
             btn17.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn17.Location = new Point(380, 291);
+            btn17.Location = new Point(388, 262);
             btn17.Name = "btn17";
             btn17.Size = new Size(28, 29);
             btn17.TabIndex = 19;
@@ -344,7 +352,7 @@
             // btn16
             // 
             btn16.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn16.Location = new Point(380, 237);
+            btn16.Location = new Point(388, 208);
             btn16.Name = "btn16";
             btn16.Size = new Size(28, 29);
             btn16.TabIndex = 18;
@@ -356,7 +364,7 @@
             // btn15
             // 
             btn15.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn15.Location = new Point(309, 346);
+            btn15.Location = new Point(317, 317);
             btn15.Name = "btn15";
             btn15.Size = new Size(28, 29);
             btn15.TabIndex = 17;
@@ -368,7 +376,7 @@
             // btn14
             // 
             btn14.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn14.Location = new Point(309, 291);
+            btn14.Location = new Point(317, 262);
             btn14.Name = "btn14";
             btn14.Size = new Size(28, 29);
             btn14.TabIndex = 16;
@@ -380,7 +388,7 @@
             // btn13
             // 
             btn13.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn13.Location = new Point(309, 237);
+            btn13.Location = new Point(317, 208);
             btn13.Name = "btn13";
             btn13.Size = new Size(28, 29);
             btn13.TabIndex = 15;
@@ -392,7 +400,7 @@
             // btn42
             // 
             btn42.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn42.Location = new Point(845, 237);
+            btn42.Location = new Point(853, 208);
             btn42.Name = "btn42";
             btn42.Size = new Size(28, 29);
             btn42.TabIndex = 38;
@@ -404,7 +412,7 @@
             // btn41
             // 
             btn41.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn41.Location = new Point(845, 175);
+            btn41.Location = new Point(853, 146);
             btn41.Name = "btn41";
             btn41.Size = new Size(28, 29);
             btn41.TabIndex = 37;
@@ -416,7 +424,7 @@
             // btn40
             // 
             btn40.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn40.Location = new Point(845, 112);
+            btn40.Location = new Point(853, 83);
             btn40.Name = "btn40";
             btn40.Size = new Size(28, 29);
             btn40.TabIndex = 36;
@@ -428,7 +436,7 @@
             // btn37
             // 
             btn37.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn37.Location = new Point(769, 237);
+            btn37.Location = new Point(777, 208);
             btn37.Name = "btn37";
             btn37.Size = new Size(28, 29);
             btn37.TabIndex = 35;
@@ -440,7 +448,7 @@
             // btn36
             // 
             btn36.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn36.Location = new Point(769, 175);
+            btn36.Location = new Point(777, 146);
             btn36.Name = "btn36";
             btn36.Size = new Size(28, 29);
             btn36.TabIndex = 34;
@@ -452,7 +460,7 @@
             // btn35
             // 
             btn35.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn35.Location = new Point(769, 112);
+            btn35.Location = new Point(777, 83);
             btn35.Name = "btn35";
             btn35.Size = new Size(28, 29);
             btn35.TabIndex = 33;
@@ -464,7 +472,7 @@
             // btn32
             // 
             btn32.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn32.Location = new Point(687, 237);
+            btn32.Location = new Point(695, 208);
             btn32.Name = "btn32";
             btn32.Size = new Size(28, 29);
             btn32.TabIndex = 32;
@@ -476,7 +484,7 @@
             // btn31
             // 
             btn31.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn31.Location = new Point(687, 175);
+            btn31.Location = new Point(695, 146);
             btn31.Name = "btn31";
             btn31.Size = new Size(28, 29);
             btn31.TabIndex = 31;
@@ -488,7 +496,7 @@
             // btn30
             // 
             btn30.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn30.Location = new Point(687, 112);
+            btn30.Location = new Point(695, 83);
             btn30.Name = "btn30";
             btn30.Size = new Size(28, 29);
             btn30.TabIndex = 30;
@@ -500,7 +508,7 @@
             // btn27
             // 
             btn27.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn27.Location = new Point(611, 237);
+            btn27.Location = new Point(619, 208);
             btn27.Name = "btn27";
             btn27.Size = new Size(28, 29);
             btn27.TabIndex = 29;
@@ -512,7 +520,7 @@
             // btn26
             // 
             btn26.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn26.Location = new Point(611, 175);
+            btn26.Location = new Point(619, 146);
             btn26.Name = "btn26";
             btn26.Size = new Size(28, 29);
             btn26.TabIndex = 28;
@@ -524,7 +532,7 @@
             // btn25
             // 
             btn25.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn25.Location = new Point(611, 112);
+            btn25.Location = new Point(619, 83);
             btn25.Name = "btn25";
             btn25.Size = new Size(28, 29);
             btn25.TabIndex = 27;
@@ -536,7 +544,7 @@
             // btn44
             // 
             btn44.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn44.Location = new Point(845, 346);
+            btn44.Location = new Point(853, 317);
             btn44.Name = "btn44";
             btn44.Size = new Size(28, 29);
             btn44.TabIndex = 46;
@@ -548,7 +556,7 @@
             // btn43
             // 
             btn43.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn43.Location = new Point(845, 291);
+            btn43.Location = new Point(853, 262);
             btn43.Name = "btn43";
             btn43.Size = new Size(28, 29);
             btn43.TabIndex = 45;
@@ -560,7 +568,7 @@
             // btn39
             // 
             btn39.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn39.Location = new Point(769, 346);
+            btn39.Location = new Point(777, 317);
             btn39.Name = "btn39";
             btn39.Size = new Size(28, 29);
             btn39.TabIndex = 44;
@@ -572,7 +580,7 @@
             // btn38
             // 
             btn38.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn38.Location = new Point(769, 291);
+            btn38.Location = new Point(777, 262);
             btn38.Name = "btn38";
             btn38.Size = new Size(28, 29);
             btn38.TabIndex = 43;
@@ -584,7 +592,7 @@
             // btn34
             // 
             btn34.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn34.Location = new Point(687, 346);
+            btn34.Location = new Point(695, 317);
             btn34.Name = "btn34";
             btn34.Size = new Size(28, 29);
             btn34.TabIndex = 42;
@@ -596,7 +604,7 @@
             // btn33
             // 
             btn33.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn33.Location = new Point(687, 291);
+            btn33.Location = new Point(695, 262);
             btn33.Name = "btn33";
             btn33.Size = new Size(28, 29);
             btn33.TabIndex = 41;
@@ -608,7 +616,7 @@
             // btn29
             // 
             btn29.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn29.Location = new Point(611, 346);
+            btn29.Location = new Point(619, 317);
             btn29.Name = "btn29";
             btn29.Size = new Size(28, 29);
             btn29.TabIndex = 40;
@@ -620,7 +628,7 @@
             // btn28
             // 
             btn28.Font = new Font("Segoe UI Semibold", 6.139131F, FontStyle.Bold);
-            btn28.Location = new Point(611, 291);
+            btn28.Location = new Point(619, 262);
             btn28.Name = "btn28";
             btn28.Size = new Size(28, 29);
             btn28.TabIndex = 39;
@@ -629,11 +637,89 @@
             btn28.TextChanged += btnMasa_Click;
             btn28.Click += btnMasa_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(224, 152);
+            label4.Name = "label4";
+            label4.Size = new Size(83, 20);
+            label4.TabIndex = 47;
+            label4.Text = "Cam kenarı";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(494, 104);
+            label5.Name = "label5";
+            label5.Size = new Size(83, 20);
+            label5.TabIndex = 47;
+            label5.Text = "Cam kenarı";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(704, 18);
+            label6.Name = "label6";
+            label6.Size = new Size(83, 20);
+            label6.TabIndex = 47;
+            label6.Text = "Cam kenarı";
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(12, 391);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(186, 85);
+            richTextBox1.TabIndex = 48;
+            richTextBox1.Text = "";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(12, 368);
+            label7.Name = "label7";
+            label7.Size = new Size(77, 20);
+            label7.TabIndex = 49;
+            label7.Text = "Yorum yaz";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(241, 447);
+            button1.Name = "button1";
+            button1.Size = new Size(89, 29);
+            button1.TabIndex = 50;
+            button1.Text = "Gönder";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // txt_mail
+            // 
+            txt_mail.Location = new Point(204, 414);
+            txt_mail.Name = "txt_mail";
+            txt_mail.Size = new Size(126, 27);
+            txt_mail.TabIndex = 51;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(226, 391);
+            label8.Name = "label8";
+            label8.Size = new Size(104, 20);
+            label8.TabIndex = 52;
+            label8.Text = "Mail adresiniz:";
+            // 
             // MusteriRez
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(895, 504);
+            Controls.Add(label8);
+            Controls.Add(txt_mail);
+            Controls.Add(button1);
+            Controls.Add(label7);
+            Controls.Add(richTextBox1);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
             Controls.Add(btn44);
             Controls.Add(btn43);
             Controls.Add(btn39);
@@ -685,6 +771,7 @@
             Text = "MusteriRez";
             Load += MusteriRez_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -736,5 +823,13 @@
         private Button btn33;
         private Button btn29;
         private Button btn28;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private RichTextBox richTextBox1;
+        private Label label7;
+        private Button button1;
+        private TextBox txt_mail;
+        private Label label8;
     }
 }

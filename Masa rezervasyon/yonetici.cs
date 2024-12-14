@@ -308,36 +308,52 @@ namespace Masa_rezervasyon
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+
+        private void rez_iptal_Click(object sender, EventArgs e)
         {
-         
+
+            // TextBox'tan girilen ID'yi al
+            string idMetni = textBox1.Text;
+
+            // ID'nin boş olup olmadığını kontrol et
+            if (string.IsNullOrWhiteSpace(idMetni))
+            {
+                MessageBox.Show("Lütfen bir ID girin.");
+                return;
+            }
+
+            // ID'nin geçerli bir sayı olup olmadığını kontrol et
+            if (!int.TryParse(idMetni, out int rezervasyonId))
+            {
+                MessageBox.Show("Lütfen geçerli bir ID girin.");
+                return;
+            }
+
+            // Veritabanı bağlantısı
             string connectionString = "Server=localhost;Database=masarezervasyon;Uid=root;Pwd='esin1021.Tkn';";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection baglan = new MySqlConnection(connectionString))
             {
                 try
                 {
-                    conn.Open();
+                    baglan.Open();
 
-                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    // Rezervasyonu silme sorgusu
+                    string query = @"DELETE FROM odeme WHERE rezervasyonId = @rezervasyonId";
+                    MySqlCommand cmd = new MySqlCommand(query, baglan);
+                    cmd.Parameters.AddWithValue("@rezervasyonId", rezervasyonId);
+
+                    int satirEtkilendi = cmd.ExecuteNonQuery();
+
+                    if (satirEtkilendi > 0)
                     {
-                        // Eğer seçim kutusu işaretlenmişse
-                        if (Convert.ToBoolean(row.Cells["Secim"].Value) == true)
-                        {
-                            int rezervasyonId = Convert.ToInt32(row.Cells["rezervasyonId"].Value);
-
-                            // Rezervasyonu sil
-                            string query = @"DELETE FROM rezervasyonlar WHERE rezervasyonId = @rezervasyonId";
-
-                            MySqlCommand cmd = new MySqlCommand(query, conn);
-                            cmd.Parameters.AddWithValue("@rezervasyonId", rezervasyonId);
-
-                            cmd.ExecuteNonQuery();
-                        }
+                        MessageBox.Show("Rezervasyon başarıyla silindi.");
                     }
-
-                    MessageBox.Show("Seçili rezervasyonlar başarıyla iptal edildi.");
-                    RezervasyonlariGetir(); // Listeyi güncelle
+                    else
+                    {
+                        MessageBox.Show("Bu ID'ye sahip bir rezervasyon bulunamadı.");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -346,14 +362,12 @@ namespace Masa_rezervasyon
             }
         }
 
-
-        private void rez_iptal_Click(object sender, EventArgs e)
+        private void btn_yenile_Click(object sender, EventArgs e)
         {
-       
-            
+            RezervasyonlariGetir();
         }
-
     }
 }
+
 
 
