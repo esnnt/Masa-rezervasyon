@@ -38,6 +38,8 @@
             baslangicsaat = new ComboBox();
             saatbitis = new ComboBox();
             lbl_Masa = new Label();
+            RezSaati_label = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
             // yiyecek_list
@@ -66,6 +68,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(315, 27);
             dateTimePicker1.TabIndex = 2;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // rezerve
             // 
@@ -119,7 +122,7 @@
             // saatbitis
             // 
             saatbitis.FormattingEnabled = true;
-            saatbitis.Items.AddRange(new object[] { "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00" });
+            saatbitis.Items.AddRange(new object[] { "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00" });
             saatbitis.Location = new Point(181, 119);
             saatbitis.Name = "saatbitis";
             saatbitis.Size = new Size(145, 28);
@@ -132,15 +135,34 @@
             lbl_Masa.AutoSize = true;
             lbl_Masa.Location = new Point(11, 12);
             lbl_Masa.Name = "lbl_Masa";
-            lbl_Masa.Size = new Size(111, 20);
+            lbl_Masa.Size = new Size(0, 20);
             lbl_Masa.TabIndex = 10;
-           
+            // 
+            // RezSaati_label
+            // 
+            RezSaati_label.AutoSize = true;
+            RezSaati_label.Location = new Point(13, 264);
+            RezSaati_label.Name = "RezSaati_label";
+            RezSaati_label.Size = new Size(15, 20);
+            RezSaati_label.TabIndex = 11;
+            RezSaati_label.Text = "-";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(10, 239);
+            label3.Name = "label3";
+            label3.Size = new Size(157, 20);
+            label3.TabIndex = 12;
+            label3.Text = "Rezerve edilen saatler:";
             // 
             // odeme
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(895, 504);
+            Controls.Add(label3);
+            Controls.Add(RezSaati_label);
             Controls.Add(lbl_Masa);
             Controls.Add(saatbitis);
             Controls.Add(baslangicsaat);
@@ -170,5 +192,7 @@
         private ComboBox baslangicsaat;
         private ComboBox saatbitis;
         private Label lbl_Masa;
+        private Label RezSaati_label;
+        private Label label3;
     }
 }

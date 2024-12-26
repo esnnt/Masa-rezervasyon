@@ -35,6 +35,9 @@ namespace Masa_rezervasyon
         private void odeme_Load(object sender, EventArgs e)
         {
             dateTimePicker1.MinDate = DateTime.Today; //bulundupu günden önceki günleri seçmemek için bulunduğu gün ve sonrakileri gösteriyor
+            rezervasyonTarihi = dateTimePicker1.Value.Date;
+            GetRezerveSaatleri();
+            
 
         }
 
@@ -54,55 +57,33 @@ namespace Masa_rezervasyon
 
 
         private void rezerve_Click(object sender, EventArgs e)
-
         {
-
-
+            // Rezervasyon tarihi ve saat bilgilerini al
             rezervasyonTarihi = dateTimePicker1.Value.Date;
             baslangicSaati = baslangicsaat.Text;
             bitisSaati = saatbitis.Text;
+
             if (baslangicSaati == "Başlangıç Saati" || bitisSaati == "Bitiş Saati")
             {
-                MessageBox.Show("başlangıç ve bitiş saati seçin");
+                MessageBox.Show("Lütfen başlangıç ve bitiş saatlerini seçin.");
                 return;
             }
+
+            // Veritabanı bağlantı dizesi
             string connectionString = "Server=localhost;Database=masarezervasyon;Uid=root;Pwd='esin1021.Tkn';";
 
-            // ListBox veya ListView'den seçilen yiyecek ve içecekler
-            // Yiyecek ve içecekleri seçili (işaretlenmiş) elemanlardan alıyoruz
-            string secilenYemekler = string.Join(", ", yiyecek_list.CheckedItems.Cast<ListViewItem>().Select(item => item.Text));
-            string secilenIcecekler = string.Join(", ", icecek_list.CheckedItems.Cast<ListViewItem>().Select(item => item.Text));
-
-            // Eğer hiçbir şey seçilmemişse uyarı gösteriyoruz
-            if (string.IsNullOrEmpty(secilenYemekler) && string.IsNullOrEmpty(secilenIcecekler))
-            {
-                MessageBox.Show("Lütfen en az bir yiyecek veya içecek seçin.");
-                return;
-            }
-
-            // Örnek: Seçilen yiyecek ve içecekleri göstermek
-            MessageBox.Show("Seçilen Yiyecekler: " + secilenYemekler + "\nSeçilen İçecekler: " + secilenIcecekler);
-
-
-            if (string.IsNullOrEmpty(secilenYemekler) && string.IsNullOrEmpty(secilenIcecekler))
-            {
-                MessageBox.Show("Lütfen en az bir yemek veya içecek seçin.");
-                return;
-            }
-
-            // Veritabanı bağlantısı
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    //çakışan saatleri kontrol et
+
+                    // Çakışan saatleri kontrol et
                     string checkQuery = @"SELECT COUNT(*) 
                                   FROM odeme 
                                   WHERE masaNo = @masaNo 
                                   AND tarih = @tarih 
                                   AND (baslangicsaat < @saatbitis AND saatbitis > @baslangicsaat)";
-
                     MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn);
                     checkCmd.Parameters.AddWithValue("@masaNo", masanumarasi);
                     checkCmd.Parameters.AddWithValue("@tarih", rezervasyonTarihi);
@@ -113,13 +94,25 @@ namespace Masa_rezervasyon
 
                     if (count > 0)
                     {
+                        // Masa zaten rezerve edilmişse işlem sonlandırılır
                         MessageBox.Show("Bu saat aralığında bu masa zaten rezerve edilmiş. Lütfen başka bir saat seçin.");
                         return;
                     }
 
+                    // ListView'den seçilen yiyecek ve içecekleri al
+                    string secilenYemekler = string.Join(", ", yiyecek_list.CheckedItems.Cast<ListViewItem>().Select(item => item.Text));
+                    string secilenIcecekler = string.Join(", ", icecek_list.CheckedItems.Cast<ListViewItem>().Select(item => item.Text));
+
+                    // Eğer hiçbir şey seçilmemişse uyarı göster
+                    if (string.IsNullOrEmpty(secilenYemekler) && string.IsNullOrEmpty(secilenIcecekler))
+                    {
+                        MessageBox.Show("Lütfen en az bir yiyecek veya içecek seçin.");
+                        return;
+                    }
+
                     // Rezervasyonu kaydet
-                    string insertQuery = @"INSERT INTO odeme (masaNo, tarih,mail, baslangicsaat, saatbitis, secilenyemekler) 
-                                       VALUES (@masaNo, @tarih,@mail, @baslangicsaat, @saatbitis, @secilenyemekler)";
+                    string insertQuery = @"INSERT INTO odeme (masaNo, tarih, mail, baslangicsaat, saatbitis, secilenyemekler) 
+                                   VALUES (@masaNo, @tarih, @mail, @baslangicsaat, @saatbitis, @secilenyemekler)";
                     MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
                     insertCmd.Parameters.AddWithValue("@masaNo", masanumarasi);
                     insertCmd.Parameters.AddWithValue("@tarih", rezervasyonTarihi);
@@ -129,21 +122,25 @@ namespace Masa_rezervasyon
                     insertCmd.Parameters.AddWithValue("@secilenyemekler", secilenYemekler + ", " + secilenIcecekler); // Yiyecekler ve içecekler
 
                     insertCmd.ExecuteNonQuery();
-                    MessageBox.Show("Rezervasyon ve ödeme başarılı.");
-                    conn.Close();
+                    MessageBox.Show("Rezervasyon başarılı.");
+                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Bir hata oluştu: " + ex.Message);
                 }
-
-
+                finally
+                {
+                    conn.Close();
+                }
             }
         }
 
+
+
         private void saatbitis_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             // Başlangıç saatini al
             string baslangicSaatiStr = baslangicsaat.SelectedItem?.ToString();
             string bitisSaatiStr = saatbitis.SelectedItem?.ToString();
@@ -171,6 +168,53 @@ namespace Masa_rezervasyon
             }
         }
 
+        private void GetRezerveSaatleri() //rezrve saatlerini getiren metot
+        {
+            string connectionString = "Server=localhost;Database=masarezervasyon;Uid=root;Pwd='esin1021.Tkn';";
+            string query = @"SELECT baslangicsaat, saatbitis 
+                     FROM odeme 
+                     WHERE masaNo = @masaNo 
+                     AND tarih = @tarih";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@masaNo", masanumarasi);
+                    cmd.Parameters.AddWithValue("@tarih", rezervasyonTarihi);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    StringBuilder saatBilgisi = new StringBuilder();
+                    while (reader.Read())
+                    {
+                        string baslangic = reader["baslangicsaat"].ToString();
+                        string bitis = reader["saatbitis"].ToString();
+                        saatBilgisi.AppendLine($"{baslangic} - {bitis}");
+                    }
+
+                    if (saatBilgisi.Length > 0)
+                    {
+                        RezSaati_label.Text = saatBilgisi.ToString();
+                    }
+                    else
+                    {
+                        RezSaati_label.Text = "Bu masa için rezerve edilmiş saat yok.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bir hata oluştu: " + ex.Message);
+                }
+            }
+        }
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            rezervasyonTarihi = dateTimePicker1.Value.Date;
+            GetRezerveSaatleri();
+        }
     }
 
 }
