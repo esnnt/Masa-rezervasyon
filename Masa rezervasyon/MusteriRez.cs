@@ -45,22 +45,16 @@ namespace Masa_rezervasyon
         }
 
 
-
-
         private void MusteriRez_Load(object sender, EventArgs e)
         {
             foreach (Control kontrol in this.Controls)
             {
-                if (kontrol is Button masaButonu)
+                if (kontrol is Button masaButonu && masaButonu.Name.StartsWith("masa")) // Masa butonlarını filtrele, butonun ismi "masa ile başlıyorsa kontrollü çaıştır"
                 {
                     masaButonu.Click += btnMasa_Click;  // Evente bağla
                 }
             }
 
-        }
-
-        private void button45_Click(object sender, EventArgs e)
-        {
 
         }
 

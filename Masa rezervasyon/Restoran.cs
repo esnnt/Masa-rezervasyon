@@ -13,9 +13,11 @@ namespace Masa_rezervasyon
             grs.Show();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
+       
 
+        private void res2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("bu restoran mevcut deðil.");
         }
     }
 }

@@ -43,6 +43,7 @@
             textBox1 = new TextBox();
             label1 = new Label();
             btn_yenile = new Button();
+            btn_yorumgoster = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -188,11 +189,22 @@
             btn_yenile.UseVisualStyleBackColor = true;
             btn_yenile.Click += btn_yenile_Click;
             // 
+            // btn_yorumgoster
+            // 
+            btn_yorumgoster.Location = new Point(709, 463);
+            btn_yorumgoster.Name = "btn_yorumgoster";
+            btn_yorumgoster.Size = new Size(174, 29);
+            btn_yorumgoster.TabIndex = 19;
+            btn_yorumgoster.Text = "Yorumları Göster";
+            btn_yorumgoster.UseVisualStyleBackColor = true;
+            btn_yorumgoster.Click += btn_yorumgoster_Click;
+            // 
             // yonetici
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(895, 504);
+            Controls.Add(btn_yorumgoster);
             Controls.Add(btn_yenile);
             Controls.Add(label1);
             Controls.Add(textBox1);
@@ -234,6 +246,7 @@
         private TextBox textBox1;
         private Label label1;
         private Button btn_yenile;
+        private Button btn_yorumgoster;
         // private ListView listView1;
     }
 }

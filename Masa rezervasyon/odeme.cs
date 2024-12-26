@@ -171,12 +171,6 @@ namespace Masa_rezervasyon
             }
         }
 
-     
-
-        private void lbl_Masa_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

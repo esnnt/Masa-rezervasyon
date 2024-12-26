@@ -18,11 +18,6 @@ namespace Masa_rezervasyon
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_kayit_Click(object sender, EventArgs e)
         {
 

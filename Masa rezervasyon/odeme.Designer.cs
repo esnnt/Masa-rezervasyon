@@ -38,7 +38,6 @@
             baslangicsaat = new ComboBox();
             saatbitis = new ComboBox();
             lbl_Masa = new Label();
-            listviewDolusaatler = new ListView();
             SuspendLayout();
             // 
             // yiyecek_list
@@ -63,7 +62,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(11, 172);
+            dateTimePicker1.Location = new Point(11, 37);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(315, 27);
             dateTimePicker1.TabIndex = 2;
@@ -110,7 +109,7 @@
             // 
             baslangicsaat.FormattingEnabled = true;
             baslangicsaat.Items.AddRange(new object[] { "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00" });
-            baslangicsaat.Location = new Point(11, 219);
+            baslangicsaat.Location = new Point(11, 119);
             baslangicsaat.Name = "baslangicsaat";
             baslangicsaat.Size = new Size(145, 28);
             baslangicsaat.TabIndex = 8;
@@ -121,7 +120,7 @@
             // 
             saatbitis.FormattingEnabled = true;
             saatbitis.Items.AddRange(new object[] { "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00" });
-            saatbitis.Location = new Point(181, 219);
+            saatbitis.Location = new Point(181, 119);
             saatbitis.Name = "saatbitis";
             saatbitis.Size = new Size(145, 28);
             saatbitis.TabIndex = 9;
@@ -131,27 +130,17 @@
             // lbl_Masa
             // 
             lbl_Masa.AutoSize = true;
-            lbl_Masa.Location = new Point(11, 8);
+            lbl_Masa.Location = new Point(11, 12);
             lbl_Masa.Name = "lbl_Masa";
             lbl_Masa.Size = new Size(111, 20);
             lbl_Masa.TabIndex = 10;
-            lbl_Masa.Text = "Masa Numarası";
-            lbl_Masa.Click += lbl_Masa_Click;
-            // 
-            // listviewDolusaatler
-            // 
-            listviewDolusaatler.Location = new Point(11, 37);
-            listviewDolusaatler.Name = "listviewDolusaatler";
-            listviewDolusaatler.Size = new Size(316, 109);
-            listviewDolusaatler.TabIndex = 11;
-            listviewDolusaatler.UseCompatibleStateImageBehavior = false;
+           
             // 
             // odeme
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(895, 504);
-            Controls.Add(listviewDolusaatler);
             Controls.Add(lbl_Masa);
             Controls.Add(saatbitis);
             Controls.Add(baslangicsaat);
@@ -181,6 +170,5 @@
         private ComboBox baslangicsaat;
         private ComboBox saatbitis;
         private Label lbl_Masa;
-        private ListView listviewDolusaatler;
     }
 }

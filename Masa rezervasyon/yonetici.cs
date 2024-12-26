@@ -366,6 +366,12 @@ namespace Masa_rezervasyon
         {
             RezervasyonlariGetir();
         }
+
+        private void btn_yorumgoster_Click(object sender, EventArgs e)
+        {
+            yorumlar yorum=new yorumlar();
+            yorum.Show();
+        }
     }
 }
 

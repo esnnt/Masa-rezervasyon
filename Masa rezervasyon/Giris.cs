@@ -81,6 +81,15 @@ namespace Masa_rezervasyon
 
                     int userCount = Convert.ToInt32(cmd.ExecuteScalar());
 
+                    if (mail == "e")
+                    {
+
+                        yonetici yntc = new yonetici();
+                        this.Close();
+                        yntc.Show();
+                        return;
+                    }
+
                     // Kullanıcı doğrulama
                     if (userCount > 0)
                     {
@@ -92,13 +101,7 @@ namespace Masa_rezervasyon
 
 
                     }
-                     if (mail == "e")
-                    {
-
-                        yonetici yntc = new yonetici();
-                        this.Close();
-                        yntc.Show();
-                    }
+                  
 
                     else
                     {
