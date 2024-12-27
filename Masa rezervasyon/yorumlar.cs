@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Net.Mail;
 
 namespace Masa_rezervasyon
 {
     public partial class yorumlar : Form
     {
         public yorumlar()
-        {
+        {  
             InitializeComponent();
         }
 
@@ -26,7 +27,6 @@ namespace Masa_rezervasyon
 
         private void yorumlar_Load(object sender, EventArgs e)
         {
-            //yapılan yorumları datagridviewde görme
             string connectionString = "Server=localhost;Database=masarezervasyon;Uid=root;Pwd='esin1021.Tkn';";
 
             using (MySqlConnection baglan = new MySqlConnection(connectionString))
@@ -35,21 +35,43 @@ namespace Masa_rezervasyon
                 {
                     baglan.Open();
 
-                    // Yorumları çekmek için SQL sorgusu
-                    string query = @"SELECT mail, yorum FROM degerlendirme";
+                    // Genel yorumları çekmek için SQL sorgusu
+                    string genelYorumQuery = @"SELECT mail, yorum FROM degerlendirme WHERE rezervasyonId IS NULL OR rezervasyonId = 0";
+                    MySqlDataAdapter genelYorumAdapter = new MySqlDataAdapter(genelYorumQuery, baglan);
+                    DataTable genelYorumTable = new DataTable();
+                    genelYorumAdapter.Fill(genelYorumTable);
 
-                    MySqlDataAdapter da = new MySqlDataAdapter(query, baglan);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
+                    // Genel yorumları DataGridView'e bağla
+                    datagridYorum.DataSource = genelYorumTable;
+                    datagridYorum.ReadOnly = true;
 
-                    // DataGridView'e bağla
-                    datagridYorum.DataSource = dt;
+                    // Rezervasyonlara özel yorumları çekmek için SQL sorgusu
+                    string rezervasyonYorumQuery = @"SELECT mail, yorum, rezervasyonId FROM degerlendirme WHERE rezervasyonId IS NOT NULL AND rezervasyonId != 0";
+                    MySqlDataAdapter rezervasyonYorumAdapter = new MySqlDataAdapter(rezervasyonYorumQuery, baglan);
+                    DataTable rezervasyonYorumTable = new DataTable();
+                    rezervasyonYorumAdapter.Fill(rezervasyonYorumTable);
+
+                    // Rezervasyon yorumlarını DataGridView'e bağla
+                    datagridgecmisyorum.DataSource = rezervasyonYorumTable;
+                    datagridgecmisyorum.ReadOnly = true;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Bir hata oluştu: " + ex.Message);
                 }
+                finally
+                {
+                    if (baglan.State == ConnectionState.Open)
+                    {
+                        baglan.Close();
+                    }
+                }
             }
+        }
+
+        private void datagridYorum_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

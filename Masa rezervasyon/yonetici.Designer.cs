@@ -155,7 +155,7 @@
             // 
             // rez_iptal
             // 
-            rez_iptal.Location = new Point(205, 350);
+            rez_iptal.Location = new Point(230, 351);
             rez_iptal.Name = "rez_iptal";
             rez_iptal.Size = new Size(145, 29);
             rez_iptal.TabIndex = 15;
@@ -165,7 +165,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(93, 350);
+            textBox1.Location = new Point(130, 352);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(94, 27);
             textBox1.TabIndex = 16;
@@ -175,9 +175,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(13, 355);
             label1.Name = "label1";
-            label1.Size = new Size(78, 20);
+            label1.Size = new Size(111, 20);
             label1.TabIndex = 17;
-            label1.Text = "Müşteri id:";
+            label1.Text = "Rezervasyon id:";
             // 
             // btn_yenile
             // 

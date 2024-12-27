@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            button1 = new Button();
             btn_geri = new Button();
-            linkLabel1 = new LinkLabel();
             label2 = new Label();
             btngiris = new Button();
             btn_göz = new Button();
@@ -46,8 +46,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(btn_geri);
-            groupBox1.Controls.Add(linkLabel1);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(btngiris);
             groupBox1.Controls.Add(btn_göz);
@@ -65,6 +65,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Giriş Yap";
             // 
+            // button1
+            // 
+            button1.Location = new Point(266, 370);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 31);
+            button1.TabIndex = 12;
+            button1.Text = "Kayıt olun";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
             // btn_geri
             // 
             btn_geri.Location = new Point(0, 412);
@@ -74,17 +84,6 @@
             btn_geri.Text = "Geri";
             btn_geri.UseVisualStyleBackColor = true;
             btn_geri.Click += btn_geri_Click;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(259, 375);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(80, 20);
-            linkLabel1.TabIndex = 10;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Kayıt Olun.";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label2
             // 
@@ -121,7 +120,6 @@
             txt_sifre.Name = "txt_sifre";
             txt_sifre.Size = new Size(208, 27);
             txt_sifre.TabIndex = 6;
-            txt_sifre.Text = "gtr34";
             // 
             // txt_mail
             // 
@@ -129,7 +127,6 @@
             txt_mail.Name = "txt_mail";
             txt_mail.Size = new Size(210, 27);
             txt_mail.TabIndex = 5;
-            txt_mail.Text = "charon";
             // 
             // txt_kullaniciadi
             // 
@@ -137,7 +134,6 @@
             txt_kullaniciadi.Name = "txt_kullaniciadi";
             txt_kullaniciadi.Size = new Size(208, 27);
             txt_kullaniciadi.TabIndex = 4;
-            txt_kullaniciadi.Text = "mehmet";
             // 
             // lbl_sifre
             // 
@@ -201,9 +197,9 @@
         private Label lbl_kullaniciadi;
         private Label label1;
         private Button btn_göz;
-        private LinkLabel linkLabel1;
         private Label label2;
         private Button btngiris;
         private Button btn_geri;
+        private Button button1;
     }
 }

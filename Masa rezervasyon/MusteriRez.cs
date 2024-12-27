@@ -16,7 +16,7 @@ namespace Masa_rezervasyon
 {
     public partial class MusteriRez : Form
     {
-        private string masanumarasi;          //masa numarası
+
         private DateTime rezervasyonTarihi; // Rezervasyon tarih
         private string mail;
         private string baslangicSaati; // Rezervasyon başlangıç saati
@@ -60,18 +60,12 @@ namespace Masa_rezervasyon
 
         private void button1_Click(object sender, EventArgs e)
         {
-        
+
             // TextBox'tan mail adresini ve RichTextBox'tan yorumu al
-            string mail = txt_mail.Text; // Kullanıcının yazdığı mail adresi
+            string mail = this.mail; // Kullanıcının yazdığı mail adresi
             string yorum = richTextBox1.Text;
 
             // Mail ve yorum boş mu kontrol et
-            if (string.IsNullOrWhiteSpace(mail))
-            {
-                MessageBox.Show("Lütfen bir mail adresi girin.");
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(yorum))
             {
                 MessageBox.Show("Lütfen bir yorum yazın.");
@@ -97,7 +91,7 @@ namespace Masa_rezervasyon
 
                     if (kayitliMi == 0)
                     {
-                        MessageBox.Show("Bu mail adresi sistemde kayıtlı değil. Lütfen geçerli bir mail adresi girin.");
+                        MessageBox.Show("Bu mail adresi sistemde kayıtlı değil.");
                         return;
                     }
 
@@ -115,8 +109,6 @@ namespace Masa_rezervasyon
                     {
                         MessageBox.Show("Yorum başarıyla kaydedildi.");
                         richTextBox1.Clear(); // Yorum alanını temizle
-                        txt_mail.Clear(); // Mail alanını temizle
-                        baglan.Close();
                     }
                     else
                     {
@@ -127,9 +119,43 @@ namespace Masa_rezervasyon
                 {
                     MessageBox.Show("Bir hata oluştu: " + ex.Message);
                 }
+                finally
+                {
+                    // Bağlantıyı kapatma
+                    baglan.Close();
+                }
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            musteriYorum mstr = new musteriYorum(mail);
+            mstr.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            gecmisYorum gcms = new gecmisYorum(mail);
+            gcms.Show();
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            // Kullanıcıya geri çıkmak istediğini soran bir onay kutusu göster
+            DialogResult result = MessageBox.Show(
+                "Tekrar giriş yapma sayfasına yönlendirileceksiniz, geri çıkmak istediğinize emin misiniz? ", // Mesaj
+                "Onay", // Başlık
+                MessageBoxButtons.YesNo, // Evet-Hayır seçenekleri
+                MessageBoxIcon.Question // Soru ikonu
+            );
+
+            // Eğer kullanıcı "Yes" seçeneğini seçerse bir işlem yapılır
+            if (result == DialogResult.Yes)
+            {
+                // Örneğin, önceki forma dönmek için bu formu kapatabilirsiniz
+                this.Close();
+            }
+        }
     }
 
 }

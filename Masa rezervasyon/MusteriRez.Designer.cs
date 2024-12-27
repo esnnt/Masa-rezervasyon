@@ -81,8 +81,9 @@
             richTextBox1 = new RichTextBox();
             label7 = new Label();
             button1 = new Button();
-            txt_mail = new TextBox();
-            label8 = new Label();
+            button2 = new Button();
+            button3 = new Button();
+            btnGeri = new Button();
             SuspendLayout();
             // 
             // label1
@@ -668,7 +669,7 @@
             // 
             richTextBox1.Location = new Point(12, 391);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(186, 85);
+            richTextBox1.Size = new Size(354, 66);
             richTextBox1.TabIndex = 48;
             richTextBox1.Text = "";
             // 
@@ -683,7 +684,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(241, 447);
+            button1.Location = new Point(277, 463);
             button1.Name = "button1";
             button1.Size = new Size(89, 29);
             button1.TabIndex = 50;
@@ -691,29 +692,44 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // txt_mail
+            // button2
             // 
-            txt_mail.Location = new Point(204, 414);
-            txt_mail.Name = "txt_mail";
-            txt_mail.Size = new Size(126, 27);
-            txt_mail.TabIndex = 51;
+            button2.Location = new Point(528, 428);
+            button2.Name = "button2";
+            button2.Size = new Size(181, 29);
+            button2.TabIndex = 53;
+            button2.Text = "Geçmiş Rezervasyonlar";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
-            // label8
+            // button3
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(226, 391);
-            label8.Name = "label8";
-            label8.Size = new Size(104, 20);
-            label8.TabIndex = 52;
-            label8.Text = "Mail adresiniz:";
+            button3.Location = new Point(715, 428);
+            button3.Name = "button3";
+            button3.Size = new Size(166, 29);
+            button3.TabIndex = 54;
+            button3.Text = "Geçmiş Yorumlar";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // btnGeri
+            // 
+            btnGeri.Location = new Point(12, 18);
+            btnGeri.Name = "btnGeri";
+            btnGeri.Size = new Size(94, 29);
+            btnGeri.TabIndex = 55;
+            btnGeri.Text = "Geri";
+            btnGeri.UseVisualStyleBackColor = true;
+            btnGeri.Click += btnGeri_Click;
             // 
             // MusteriRez
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(895, 504);
-            Controls.Add(label8);
-            Controls.Add(txt_mail);
+            Controls.Add(btnGeri);
+            Controls.Add(button3);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label7);
             Controls.Add(richTextBox1);
@@ -829,7 +845,8 @@
         private RichTextBox richTextBox1;
         private Label label7;
         private Button button1;
-        private TextBox txt_mail;
-        private Label label8;
+        private Button button2;
+        private Button button3;
+        private Button btnGeri;
     }
 }

@@ -23,17 +23,6 @@ namespace Masa_rezervasyon
 
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            //kayıt ol linkinkine tıkladığında, kayıt olma ekranı açılacak
-            Kayit kyt = new Kayit();
-            kyt.Show();
-        }
-
-
-
-
-
         private void btn_geri_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -101,7 +90,7 @@ namespace Masa_rezervasyon
 
 
                     }
-                  
+
 
                     else
                     {
@@ -116,7 +105,7 @@ namespace Masa_rezervasyon
 
             }
         }
-        private bool sifreGizli=true;
+        private bool sifreGizli = true;
         private void btn_göz_Click(object sender, EventArgs e)
         {
 
@@ -134,6 +123,13 @@ namespace Masa_rezervasyon
                 btn_göz.BackgroundImage = Image.FromFile("C:\\Users\\esint\\Desktop\\k\\bitirme projesi\\hide.png"); // Kapalı göz simgesi
                 sifreGizli = true; // Durumu güncelle   
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //kayıt ol linkinkine tıkladığında, kayıt olma ekranı açılacak
+            Kayit kyt = new Kayit();
+            kyt.Show();
         }
     }
 

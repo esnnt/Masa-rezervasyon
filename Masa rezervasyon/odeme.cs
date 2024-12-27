@@ -13,7 +13,7 @@ using System.Net.Mail;
 
 namespace Masa_rezervasyon
 {
-    public partial class odeme : Form
+   public partial class odeme : Form
     {
 
 
