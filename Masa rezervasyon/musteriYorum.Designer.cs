@@ -113,7 +113,7 @@
             Controls.Add(id_txt);
             Controls.Add(dataGridView1);
             Name = "musteriYorum";
-            Text = "musteriYorum";
+            Text = "gecmisRez";
             Load += musteriYorum_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

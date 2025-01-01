@@ -86,18 +86,18 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 8);
             label1.Name = "label1";
-            label1.Size = new Size(117, 20);
+            label1.Size = new Size(110, 20);
             label1.TabIndex = 3;
-            label1.Text = "Güncel Yorumlar";
+            label1.Text = "Genel Yorumlar";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(12, 242);
             label2.Name = "label2";
-            label2.Size = new Size(120, 20);
+            label2.Size = new Size(89, 20);
             label2.TabIndex = 4;
-            label2.Text = "Geçmiş Yorumlar";
+            label2.Text = "Id Yorumları";
             // 
             // yorumlar
             // 
